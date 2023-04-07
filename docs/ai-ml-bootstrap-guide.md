@@ -4,6 +4,8 @@
 
 © 2023 Seb Garrioch. All rights reserved.
 
+Published under the [MIT License](/LICENSE).
+
 ## 2	Introduction
 This document is an artificial intelligence (AI) and machine learning (ML) bootstrap guide. The guide provides instructions for technologists who want an onramp for artificial intelligence and machine learning. The author’s intention is to help accelerate the learning path so that time, energy, and other resources are used most efficiently.
 
