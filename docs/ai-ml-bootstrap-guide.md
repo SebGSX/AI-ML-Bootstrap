@@ -33,7 +33,7 @@ Given that OEMs like Dell and Puget Systems will provide guidance on hardware se
 
 Training new models that are highly accurate is computationally expensive. Accordingly, the ML workload should be offloaded to the cloud or to dedicated server hardware for the ML experiments that produce said models. Similarly, the AI workload should be offloaded so that multiple concurrent users can be served for QA, testing, etc. That said, it must be noted that performing inference from models is considerably less computationally demanding than training the models, which is why models can be served on inexpensive hardware in some cases.
 
-Irrespective of any off-loading, the developer workstation must be able to accommodate pre-processing as well as model transformation and fine-tuning experiments. The limit in task complexity directly correlates to the amount of time taken by the workstation to compute. When the workstation is busy, the developer is idle. Accordingly, the more powerful the workstation, the the more complexity that can be handled in an acceptable timeframe.
+Irrespective of any off-loading, the developer workstation must be able to accommodate pre-processing as well as model transformation and fine-tuning experiments. The limit in task complexity directly correlates to the amount of time taken by the workstation to compute. When the workstation is busy, the developer is idle. Accordingly, the more powerful the workstation, the more complexity that can be handled in an acceptable timeframe.
 
 ### 4.2	Recommended Hardware Specification for a Self-Built Developer Workstation
 When reviewing the following specifications, please bear in mind that the guidance was written in March/April of 2023. Accordingly, the hardware specifications reflect the available hardware at the time. Whether reading this guide close to the time of writing or in future, what matter most are the principles guiding the choices. The principles matter because they’re designed to maximise performance in a cost-optimised manner that reduces waste caused by over-spec.
@@ -53,9 +53,9 @@ RAM speed is also important; however, there is a risk of overspending or buying 
 At the time of writing, I chose two sets of 64GB (2x32GB) Corsair Vengeance DDR5 SDRAM with a maximum frequency of 5,600Mhz. I chose that speed because that is the maximum turbo boost frequency for my CPU and because my motherboard and chipset support it.
 
 #### 4.2.3	Graphics Processing Unit (GPU)
-In general, get the best GPU you can afford because AI and ML benefit tremendously from the parallelisation GPUs offer. Some GPUs are factory overclocked, which is good. Please make sure that your power supply unit (PSU) has enough power for all your components so that stability is ensured. Further, please ensure that your case has sufficient cooling and that your cables are properly managed to aid airflow, which in turn helps to ensure stability. Lastly, it is generally recommended that the GPU and motherboard manufacturer are the same for reasons of stability.
+In general, get the best GPU you can afford because AI and ML benefit tremendously from the parallelisation GPUs offer. Some GPUs are factory overclocked, which is good. Please make sure that your power supply unit (PSU) has enough power for all your components so that stability is ensured. Further, please ensure that your case has sufficient cooling and that your cables are properly managed to aid airflow, which in turn helps to ensure stability.
 
-> A note of cuation. GPUs are notoriously hungry for energy and become more so when overclocked. While a GPU may be rated to work with a 1,000W PSU for example, overclocking will increase PSU load so be sure to provide accordingly. If you do choose to overclock your GPU and your system then starts to shutdown, even gracefully, without warning, your PSU likely cannot handle the extra load.
+> A note of caution. GPUs are notoriously hungry for energy and become more so when overclocked. While a GPU may be rated to work with a 1,000W PSU for example, overclocking will increase PSU load so be sure to provide accordingly. If you do choose to overclock your GPU and your system then starts to shut down (even gracefully) without warning, your PSU likely cannot handle the extra load.
 
 At the time of writing, I chose the Asus ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X. It has 16,384 CUDA Cores, 24GB GDDR6X RAM, and an engine clock that runs at 2,640Mhz (OC) and 2,610Mhz (default). The device has a 384-bit memory bus and a memory speed of 21Gbps. I chose that GPU because it is the best available consumer-grade device within the Nvidia range that satisfies the requirements in this section.
 
@@ -73,7 +73,9 @@ At the time of writing, I chose four Samsung Evo 980 Pro NVMe 2TB SSDs with a ma
 > Though not essential, it is recommended that an external, spindle disk is used to provide for backups and the storage of non-essential data. At the time of writing, I chose a 12TB SanDisk G-Drive that connects via USB-C.
 
 #### 4.2.5	Motherboard
-Motherboards are a great way to overspend. Vendors charge considerably more for enthusiast devices with fancy LEDs, cool aesthetics, and support for the fastest components as well as overclocking. The trap is thinking that having the fastest components will produce the best results. Generally, enthusiast level hardware is great for bragging rights and not much else in a practical sense. To avoid overspending, spec your CPU, RAM, GPU, and storage then find an appropriate motherboard from the same vendor that provides your GPU. Even if you intend on overclocking, you likely don’t need the flagship motherboard.
+Motherboards are a great way to overspend. Vendors charge considerably more for enthusiast devices with fancy LEDs, cool aesthetics, and support for the fastest components as well as overclocking. The trap is thinking that having the fastest components will produce the best results. Generally, enthusiast level hardware is great for bragging rights and not much else in a practical sense. To avoid overspending, spec your CPU, RAM, GPU, and storage then find an appropriate motherboard. Even if you intend on overclocking, you likely don’t need the flagship motherboard.
+
+> To maximise compatibility as well as aid in optimisation, it tends to be a good idea to get the motherboard from the same manufacturer as your GPU. 
 
 At the time of writing, I chose the Asus Prime Z790-A Wi-Fi motherboard. I chose that motherboard because it is the best available consumer-grade device within the Asus range that satisfies the requirements in this section.
 
@@ -94,7 +96,7 @@ To get the maximum benefit from your developer workstation, please ensure that a
 ### 5.1	Operating System (OS)
 Whether your preference is Microsoft Windows or Linux, please make sure that you get the latest operating system and ensure that it is fully updated. Irrespective of OS chosen, please don’t forget a good anti-virus software as well. By good, I mean one that keeps your system safe without interfering with your work.
 
-When building a new computer and using Windows, you may want to consider using an OEM license. An OEM license is less expensive than a retail license for Windows, but it does not come with access to Microsoft Support and it is tied to the machine on which it is installed. Please be sure to choose the Pro edition of Windows so that you are not restricted on any feature.
+When building a new computer and using Windows, you may want to consider using an OEM license. An OEM license is less expensive than a retail license for Windows; however, it does not come with access to Microsoft Support, and it is tied to the machine on which it is installed. Please be sure to choose the Pro edition of Windows so that you are not restricted on any feature.
 
 ### 5.2	Drivers and System Utilities
 Once your operating system is installed and updated, please make sure to update all your drivers to their latest versions. Further, please ensure that all necessary system utilities such as those required for cooling and overclocking are installed and up to date. For example, iCUE and GPU Tweak are such utilities.
@@ -202,7 +204,7 @@ The Client Layer can be implemented several ways; however, for reasons of perfor
 At this point you should have a fully built, fully installed, and fully configured developer workstation for AI and ML. Nice work! Our next steps will be to familiarise ourselves with the sources of datasets and pretrained models so that we can start with a functioning AI, learn about fine-tuning, and then get into training from scratch. Please do bear in mind that training from scratch is expensive to do correctly. While a self-built developer workstation can run modest experiments for training, any sophisticated training is likely best done in the cloud. Training in the cloud allows you to pay for what you use. While still expensive, it’s orders of magnitude more affordable than buying the hardware.
 
 ## 6	Sources of Datasets and Pretrained Models
-Whether training from scratch, training the pretrained, or fine-tuning ML models, we need data. Thankfully, there is an abundance of data available to us from a number of sources.
+Whether training from scratch, training the pretrained, or fine-tuning ML models, we need data. Thankfully, there is an abundance of data available to us from several sources.
 
 ### 6.1	Hugging Face
 Hugging Face develops tools for building applications that use AI and ML. The company provides the Hugging Face Transformers library referenced in section 5.7.3.5 within this guide. Hugging Face also provides a platform that allows people to share datasets and models for ML. Hugging Face can be accessed at its site: https://huggingface.co/.
