@@ -9,32 +9,31 @@ Published under the [MIT License](/LICENSE).
 ## 2	Introduction
 This document is an artificial intelligence (AI) and machine learning (ML) bootstrap guide. The guide provides instructions for technologists who want an onramp for artificial intelligence and machine learning. The author’s intention is to help accelerate the learning path so that time, energy, and other resources are used most efficiently.
 
-This guide is written for a highly technical audience; however, the author assumes that the reader has at minimum a conceptual understanding of AI and ML. As such, the concepts are not explained to keep the text concise. Similarly, it is assumed that the reader is familiar with hardware, software, infrastructure, development, architecture, etc. and as such, those topics are not explained. The author assumes that if the reader needs further information that the reader will make use of resources such as ChatGPT, Google, Kindle, or similar services for help.
+This guide is written for a highly technical audience unfamiliar with building AI and ML projects. That said, the author assumes that the reader has at minimum a conceptual understanding of AI and ML. As such, those concepts are not explained to keep the text concise. Similarly, it is assumed that the reader is familiar with hardware, software, infrastructure, development, architecture, infosec, DevOps, etc. and as such, those topics are not explained. The author further assumes that if the reader needs additional information that the reader will make use of resources such as ChatGPT, Google, Kindle, or similar services for help.
 
 ## 3	Acknowledgements
-Before I begin, it is imperative to acknowledge the thousands if not tens of thousands who have contributed to the vast amount of intellectual property underpinning AI and ML. Whether in the form of books, articles, hardware, software, other technologies, data, etc, AI and ML would not be possible without the contributions from many fields and many communities. The fact that so much of the intellectual property is open source and accessible to all, is both encouraging and humbling. All I can say is thank you.
+Before I begin, it is imperative to acknowledge the thousands if not tens of thousands who have contributed to the vast amount of intellectual property underpinning AI and ML. Whether in the form of books, articles, mathematics, hardware, software, other technologies, data, etc, AI and ML would not be possible without the contributions from many fields and many communities. The fact that so much of the intellectual property is open source and accessible to all, is both encouraging and humbling. All I can say is thank you.
 
 OpenAI's ChatGPT proofread and checked the content of this guide, which greatly improved the speed at which I was able to prepare it from my notes.
 
 ## 4	Hardware
 ### 4.1	Overview
-Given the proliferation of cloud-based GPUs, it is possible and arguably more cost-effective in the long-run to make use of cloud-hosted developer workstations. The challenge with cloud-hosted developer workstations is that the developer workflow and experience are often degraded by latency. Further, even under the best circumstances latency can be created by resource contention, traffic, and outages. Latency essentially knocks developers out of the zone, which impacts productivity (business concern) and psychological flow (developer concern). Accordingly, a dedicated, on-premises developer workstation is recommended. There are fundamentally three options that a developer can take:
+Given the proliferation of cloud-based GPUs, it is possible and arguably more cost-effective in the long-run to make use of cloud-hosted developer workstations. The challenge with cloud-hosted developer workstations is that the developer workflow and experience are often degraded by latency. Further, even under the best circumstances latency can be created by resource contention, traffic, and outages. Latency essentially knocks developers out of the zone, which impacts productivity (business concern) and psychological flow (developer concern). Accordingly, a dedicated, on-premises developer workstation is recommended for reasons of productivity and enjoyment. There are fundamentally three options for providing a developer workstation:
 
-*	Self-built workstation (least expensive but restricted to consumer hardware);
-*	OEM-built by Dell or similar (more expensive but with access to high-end hardware and no need to build the workstation); and
-*	Specialist OEM-built by Puget Systems or similar (most expensive but with access to the highest-end components).
+*	Self-built workstation (least expensive but restricted to consumer hardware and requires the developer to build the workstation);
+*	OEM-built workstation by Dell or similar (more expensive but with access to high-end hardware and no need to build the workstation); and
+*	Specialist OEM-built workstation by Puget Systems or similar (most expensive but with access to the highest-end components and need to build the workstation).
 
-Given that OEMs like Dell and Puget Systems will provide guidance on hardware selection, this guide focuses on the self-built workstation option.
-
-There are fundamentally three workloads to consider when building a workstation:
+Given that OEMs like Dell and Puget Systems will provide guidance on hardware selection, this guide focuses on the self-built workstation option. There are fundamentally four workloads to consider when building a workstation:
 
 *	The software development workload to build the AI/ML software;
-*	The ML workload to pre-process data and train models, and 
-*	The AI workload to execute models.
+*	The pre-processing workload to prepare datasets for use in training and fine-tuning;
+*	The ML workload to train, transform, and fine-tune models, and 
+*	The AI workload to perform inference from models.
 
-Ideally, the ML workload will be offloaded to the cloud or to dedicated server hardware for the main data pre-processing and ML experiments, which ultimately produce the models. Similarly, the AI workload will be offloaded so that multiple concurrent users can be served for QA, testing, etc.
+Training new models that are highly accurate is computationally expensive. Accordingly, the ML workload should be offloaded to the cloud or to dedicated server hardware for the ML experiments that produce said models. Similarly, the AI workload should be offloaded so that multiple concurrent users can be served for QA, testing, etc. That said, it must be noted that performing inference from models is considerably less computationally demanding than training the models, which is why models can be served on inexpensive hardware in some cases.
 
-That said, the developer workstation must be able to accommodate limited data pre-processing as well as limited model training and execution experiments. The limit in scope directly correlates to the amount of time taken by the workstation to compute pre-processing and experiments. When the workstation is busy, the developer is idle. Accordingly, the more powerful the workstation, the less limited the pre-processing and experiments.
+Irrespective of any off-loading, the developer workstation must be able to accommodate pre-processing as well as model transformation and fine-tuning experiments. The limit in task complexity directly correlates to the amount of time taken by the workstation to compute. When the workstation is busy, the developer is idle. Accordingly, the more powerful the workstation, the the more complexity that can be handled in an acceptable timeframe.
 
 ### 4.2	Recommended Hardware Specification for a Self-Built Developer Workstation
 When reviewing the following specifications, please bear in mind that the guidance was written in March/April of 2023. Accordingly, the hardware specifications reflect the available hardware at the time. Whether reading this guide close to the time of writing or in future, what matter most are the principles guiding the choices. The principles matter because they’re designed to maximise performance in a cost-optimised manner that reduces waste caused by over-spec.
