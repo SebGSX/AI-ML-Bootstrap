@@ -157,6 +157,12 @@ As at the time of writing, there are two flavours of Conda: Anaconda and Minicon
 #### 5.7.2	Bazel
 Bazel is a cross-platform and open-source tool used to build and test multi-language and multi-platform projects. Bazel is installed by following the instructions provided on its project site: https://bazel.build/.
 
+##### 5.7.2.1	Bazelisk
+Bazelisk is a cross-platform and open-source tool used to wrap and launch Bazel. It automatically picks a good version of Bazel given your working directory, downloads it from the official servers (if needed), then runs Bazel passing through all command line arguments transparently. Bazelisk is installed by following the instructions provided on its project site: https://github.com/bazelbuild/bazelisk.
+
+##### 5.7.2.2	Buildifier
+Buildifier is a cross-platform and open-source tool used to format Bazel BUILD and .bzl files using a standard convention. Buildifier is installed by following the instructions provided on its project site: https://github.com/bazelbuild/buildtools/tree/master/buildifier.
+
 #### 5.7.3	Data Layer
 Designing a data layer for an AI and ML solution is a complex topic that is beyond the scope of this guide. Assuming you’ve built a developer workstation that uses NVMe drives in a RAID-0 configuration, we have options. We could use files stored in the OS filesystem or install specific storage software.
 
