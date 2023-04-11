@@ -169,7 +169,7 @@ Git is a cross-platform and open-source tool used for distributed version contro
 #### 5.7.4	Docker Desktop
 Docker Desktop is a cross-platform and open-source tool used to build and share containerised apps and services. Docker Desktop is installed by following the instructions provided on its project site: https://docs.docker.com/desktop/.
 
-> The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, frameworks, and libraries are predominantly available on Linux.
+> The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, frameworks, and libraries are available on Linux.
 
 ##### 5.7.4.1	Nvidia CUDA Drivers
 The Nvidia CUDA Drivers allow GPU passthrough to Docker containers running on Windows 11. The Nvidia CUDA Drivers are installed by following the instructions provided on Nvidia’s developer site: https://developer.nvidia.com/cuda/wsl.
