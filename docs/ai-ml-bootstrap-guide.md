@@ -176,6 +176,9 @@ The Nvidia CUDA Drivers allow GPU passthrough to Docker containers running on Wi
 
 > It is worthwhile to consider joining the Nvidia Developer Program for access to preview drivers, learning resources, and advanced tools: https://developer.nvidia.com/.
 
+##### 5.7.4.2	Nvidia CUDA Base Images
+For access to the latest Nvisia CUDA base images, please visit: https://hub.docker.com/r/nvidia/cuda.
+
 #### 5.7.5	Data Layer
 Designing a data layer for an AI and ML solution is a complex topic that is beyond the scope of this guide. Assuming you’ve built a developer workstation that uses NVMe drives in a RAID-0 configuration, we have options. We could use files stored in the OS filesystem or install specific storage software.
 
