@@ -166,7 +166,10 @@ Buildifier is a cross-platform and open-source tool used to format Bazel BUILD a
 #### 5.7.3	Git
 Git is a cross-platform and open-source tool used for distributed version control. Git is installed by following the instructions provided on its project site: https://github.com/git-guides.
 
-#### 5.7.4	Data Layer
+#### 5.7.4	Docker Desktop
+Docker Desktop is a cross-platform and open-source tool used to build and share containerised apps and services. Docker Desktop is installed by following the instructions provided on its project site: https://docs.docker.com/desktop/.
+
+#### 5.7.5	Data Layer
 Designing a data layer for an AI and ML solution is a complex topic that is beyond the scope of this guide. Assuming you’ve built a developer workstation that uses NVMe drives in a RAID-0 configuration, we have options. We could use files stored in the OS filesystem or install specific storage software.
 
 The simplest solution would be to rely on the basic OS filesystem. More complex solutions include but are not limited to object storage services such as those provided by AWS, Azure, and Google Cloud; and distributed file systems such as the Hadoop Distributed File System (HDFS). Databases like MLDB as well as distributed cache technologies like Redis may also be used.
@@ -175,38 +178,38 @@ Much of the datasets ingested during training and fine tuning for ML models tend
 
 Please note that the specific requirements for any solution’s data needs will vary based on many factors. In terms of ML, the data layer requirements for training a new model vs fine-tuning an existing model vary greatly. The reason for the variance is that training a new model is considerably more data-intensive than fine-tuning. Similarly, running an AI that makes inferences from an existing model may have anything from quite modest data layer needs to enterprise-grade needs. Such needs could depend on whether the AI runs on a single user’s device or on servers intended to serve millions.
 
-##### 5.7.4.1	Petastorm
+##### 5.7.5.1	Petastorm
 Petastorm is a cross-platform and open-source data access library. Petastorm provides for single machine as well as distributed system training and evaluation of ML models directly from datasets within the Apache Parquet format. Petastorm is installed by following the instructions provided on its project site: https://petastorm.readthedocs.io/.
 
-#### 5.7.5	AI/ML Layer
+#### 5.7.6	AI/ML Layer
 The AI/ML Layer provides for model training, fine-tuning, and inference capabilities using both CPU and GPU capabilities. Given current industry trends as at the time of writing, the most effective way to build the AI/ML Layer so that the resulting service can be containerised for deployment within Kubernetes, is to use gRPC. gRPC allows for native Python execution that is essential for running JAX, PyTorch, and TensorFlow functions that support training, fine-tuning, and inference capabilities for models.
 
-##### 5.7.5.1	Nvidia CUDA Toolkit
+##### 5.7.6.1	Nvidia CUDA Toolkit
 Nvidia’s Compute Unified Device Architecture (CUDA) is a parallel computing platform and application programming interface (API). The CUDA Toolkit allows certain Nvidia GPUs to be used for general-purpose computing on GPUs (GPGPU). The CUDA Toolkit is installed by following the instructions provided on Nvidia’s developer site: https://developer.nvidia.com/cuda-toolkit.
 
 Once the CUDA Toolkit is installed, you may see a note indicating that certain integrated tools were not installed. Please refer to the URL provided by the installer for further information. In essence, the tools have been moved into a Visual Studio extension available within the Visual Studio Marketplace. At the time of writing, the tools have been bundled together under the title “NVIDIA Nsight Integration” and the bundle is offered in both 32- and 64-bit. Please be sure to check that you’re downloading the correct extension by verifying that the author is listed as Nvidia (www.nvidia.com) within the Visual Studio Marketplace: https://marketplace.visualstudio.com/.
 
-##### 5.7.5.2	JAX
+##### 5.7.6.2	JAX
 JAX is a cross-platform and open-source combination of Autograd and XLA for high-performance, numerical computing. JAX provides a familiar API as well as transformations, and it runs on CPU, GPU, and TPU (cloud). Please make sure to install JAX for GPU. JAX is installed by following the instructions provided on its project site: https://jax.readthedocs.io/.
 
-##### 5.7.5.3	PyTorch
+##### 5.7.6.3	PyTorch
 PyTorch is a cross-platform and open-source ML framework. PyTorch provides for distributed training and cloud support. In addition, PyTorch has a robust ecosystem. Please make sure to install PyTorch for GPU. PyTorch is installed by following the instructions provided on its project site: https://pytorch.org/.
 
-##### 5.7.5.4	TensorFlow
+##### 5.7.6.4	TensorFlow
 TensorFlow is a cross-platform and open-source ML platform. TensorFlow provides for data preparation, model training and deployment, and MLOps. TensorFlow installs with GPU support by default. TensorFlow is installed by following the instructions provided on its project site: https://www.tensorflow.org/.
 
-##### 5.7.5.5	Hugging Face Transformers
+##### 5.7.6.5	Hugging Face Transformers
 The Hugging Face Transformers are a cross-platform and open-source set of APIs and tools that enable the download and training of pretrained ML models. Using pretrained models reduces compute costs and saves on both time and energy as well as other resources. The Hugging Face Transformers are installed by following the instructions provided on its project site: https://huggingface.co/docs/transformers/.
 
-##### 5.7.5.6	gRPC
+##### 5.7.6.6	gRPC
 gRPC is a cross-platform and open-source Remote Procedure Call (RPC) framework. gRPC efficiently connects services in and across datacentres with pluggable support for load balancing, tracing, health checking and authentication. gRPC supports streaming as well as bidirectional communication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications, and browsers to backend services. gRPC is installed by following the instructions provided on its project site: https://grpc.io/.
 
 Please note that gRPC supports multiple languages; however, we use the Python flavour of gRPC. We do so because we use gRPC to create a service layer that runs JAX, PyTorch, and TensorFlow functions that support training, fine-tuning, and inference capabilities for models.
 
-#### 5.7.6	Web API Layer
+#### 5.7.7	Web API Layer
 The Web API Layer can be implemented several ways; however, for reasons of performance, security, scalability, manageability, cost, and developer productivity, only two alternatives are recommended. Said options are ASP.NET for C# developers and Micronaut for Java developers. Web APIs built using either option will integrate with the AI/ML Layer using auto-generated stubs provided by gRPC. To facilitate Client Layer development, OpenAPI/Swagger for API documentation and client auto-generation as well as JSON Web Token (JWT) for authentication and authorisation, are required.
 
-#### 5.7.7	Client Layer
+#### 5.7.8	Client Layer
 The Client Layer can be implemented several ways; however, for reasons of performance, security, scalability, manageability, cost, and developer productivity, only one approach per device type is recommended. For mobile devices, React Native is recommend. For web-enabled devices like laptops and desktops, ReactJS is recommended. Please ensure that TypeScript is used because it attends to the challenges caused by JavaScript at scale. Clients built using either React Native or ReactJS will integrate with the Web API Layer using auto-generated stubs provided by the OpenAPI/Swagger toolchain. Authentication and authorisation will be provided by bearer tokens using JWT.
 
 ### 5.8	Next Steps
