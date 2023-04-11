@@ -169,6 +169,13 @@ Git is a cross-platform and open-source tool used for distributed version contro
 #### 5.7.4	Docker Desktop
 Docker Desktop is a cross-platform and open-source tool used to build and share containerised apps and services. Docker Desktop is installed by following the instructions provided on its project site: https://docs.docker.com/desktop/.
 
+> The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, frameworks, and libraries are predominantly available on Linux.
+
+##### 5.7.4.1	Nvidia CUDA Drivers
+The Nvidia CUDA Drivers allow GPU passthrough to Docker containers running on Windows 11. The Nvidia CUDA Drivers are installed by following the instructions provided on Nvidia’s developer site: https://developer.nvidia.com/cuda/wsl.
+
+> It is worthwhile to consider joining the Nvidia Developer Program for access to preview drivers, learning resources, and advanced tools: https://developer.nvidia.com/.
+
 #### 5.7.5	Data Layer
 Designing a data layer for an AI and ML solution is a complex topic that is beyond the scope of this guide. Assuming you’ve built a developer workstation that uses NVMe drives in a RAID-0 configuration, we have options. We could use files stored in the OS filesystem or install specific storage software.
 
