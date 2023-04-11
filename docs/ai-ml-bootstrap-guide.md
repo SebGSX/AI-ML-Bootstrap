@@ -152,7 +152,7 @@ Generally, the languages used in AI and ML include but are not limited to Python
 If used carefully, GitHub Copilot is a worthwhile plugin that can accelerate development using AI. Mundane, boilerplate code as well as code that follows established patterns are good use cases. GitHub Copilot also helps with code annotation and documentation, which saves time (see: https://github.com/features/copilot). Please also note that OpenAI’s ChatGPT+ can also help with coding, explanations, and guidance if used correctly.
 
 #### 5.6.2	Windows Subsystem for Linux
-Please note that while Windows provides a compelling developer experience, running AI/ML projects on Windows natively is challenging. Accordingly, the Windows Subsystem for Linux (WSL) is recommended as the execution environment for AI/ML projects that are developed on Windows machines.
+Please note that while Windows provides a compelling developer experience, running AI/ML projects on Windows natively is challenging. Accordingly, the Windows Subsystem for Linux (WSL) is recommended as the execution environment for AI/ML projects that are developed on Windows machines. WSL is installed by following the instructions provided by Microsoft on its Learn site: https://learn.microsoft.com/en-us/windows/wsl/install.
 
 ### 5.7	SDKs, Frameworks, Libraries, and Tools
 #### 5.7.1	Python (AI/ML Runtime)
@@ -178,7 +178,7 @@ Git is a cross-platform and open-source tool used for distributed version contro
 #### 5.7.4	Docker Desktop (Containerisation)
 Docker Desktop is a cross-platform and open-source tool used to build and share containerised apps and services. Docker Desktop is installed by following the instructions provided on its project site: https://docs.docker.com/desktop/.
 
-> The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, frameworks, and libraries are available on Linux.
+> The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, frameworks, and libraries are available on Linux. To host the IDE on Windows but execute the code in Linux. For guidance, please see: https://docs.docker.com/desktop/windows/wsl/.
 
 ##### 5.7.4.1	Nvidia CUDA Drivers
 The Nvidia CUDA Drivers allow GPU passthrough to Docker containers running on Windows 11. The Nvidia CUDA Drivers are installed by following the instructions provided on Nvidia’s developer site: https://developer.nvidia.com/cuda/wsl.
