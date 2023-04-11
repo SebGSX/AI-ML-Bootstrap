@@ -45,6 +45,8 @@ AI and ML are CPU intensive meaning that a good CPU is vital. When choosing a CP
 
 At the time of writing, I chose the Intel 13900F CPU, which has 8 performance core, 16 efficient cores, and provides for 32 threads in total. The CPU has 36MB of on-die cache, no graphics processing capability, and cannot be overclocked. I chose that CPU because it is the best available consumer-grade device within the Intel range that satisfies the requirements in this section.
 
+> Please note that while the CPU I selected is good in terms of consumer-grade hardware, it is the minimum spec for meaningful AI/ML work.
+
 #### 4.2.2	Random Access Memory (RAM)
 In terms of RAM, think big because AI and ML are memory intensive. If your CPU, chipset, and motherboard support 128GB maximum, then get 128GB. Make sure to get matched pairs for dual channel and make sure that all slots are filled on the motherboard.
 
@@ -52,12 +54,16 @@ RAM speed is also important; however, there is a risk of overspending or buying 
 
 At the time of writing, I chose two sets of 64GB (2x32GB) Corsair Vengeance DDR5 SDRAM with a maximum frequency of 5,600Mhz. I chose that speed because that is the maximum turbo boost frequency for my CPU and because my motherboard and chipset support it.
 
+> Please note that while 128GB is the maximum that my selected motherboard supports, it is the minimum spec for meaningful AI/ML work.
+
 #### 4.2.3	Graphics Processing Unit (GPU)
 In general, get the best GPU you can afford because AI and ML benefit tremendously from the parallelisation GPUs offer. Some GPUs are factory overclocked, which is good. Please make sure that your power supply unit (PSU) has enough power for all your components so that stability is ensured. Further, please ensure that your case has sufficient cooling and that your cables are properly managed to aid airflow, which in turn helps to ensure stability.
 
 > A note of caution. GPUs are notoriously hungry for energy and become more so when overclocked. While a GPU may be rated to work with a 1,000W PSU for example, overclocking will increase PSU load so be sure to provide accordingly. If you do choose to overclock your GPU and your system then starts to shut down (even gracefully) without warning, your PSU likely cannot handle the extra load.
 
 At the time of writing, I chose the Asus ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X. It has 16,384 CUDA Cores, 24GB GDDR6X RAM, and an engine clock that runs at 2,640Mhz (OC) and 2,610Mhz (default). The device has a 384-bit memory bus and a memory speed of 21Gbps. I chose that GPU because it is the best available consumer-grade device within the Nvidia range that satisfies the requirements in this section.
+
+> Please note that while the GPU selected is good in terms of consumer-grade hardware, it is the minimum spec for meaningful AI/ML work.
 
 #### 4.2.4	Storage
 Like with RAM, when it comes to storage think big because AI and ML need lots of space. Even the fastest storage is considerably slower than RAM, which means that its speed is an important concern to avoid bottlenecks. When considering storage performance, a lot of things matter. The mechanism of storage, the interface, and the number of storage devices working together, all contribute to storage performance. At the time of writing, the fastest mechanism of storage is Non-Volatile Memory Express (NVMe), and the fastest interface for storage devices is Peripheral Component Interconnect Express (PCIe). NVMe drives connect via PCIe, which makes such drives the natural choice for high performance. Further, GPUs connect via PCIe, which allows them to communicate directly with NVMe drives. Doing so improves performance by excluding the CPU from communication. Accordingly, NVMe drives are ideal for AI and ML purposes.
@@ -145,16 +151,19 @@ Generally, the languages used in AI and ML include but are not limited to Python
 #### 5.6.1	AI Assistance
 If used carefully, GitHub Copilot is a worthwhile plugin that can accelerate development using AI. Mundane, boilerplate code as well as code that follows established patterns are good use cases. GitHub Copilot also helps with code annotation and documentation, which saves time (see: https://github.com/features/copilot). Please also note that OpenAI’s ChatGPT+ can also help with coding, explanations, and guidance if used correctly.
 
+#### 5.6.2	Windows Subsystem for Linux
+Please note that while Windows provides a compelling developer experience, running AI/ML projects on Windows natively is challenging. Accordingly, the Windows Subsystem for Linux (WSL) is recommended as the execution environment for AI/ML projects that are developed on Windows machines.
+
 ### 5.7	SDKs, Frameworks, Libraries, and Tools
-#### 5.7.1	Python
+#### 5.7.1	Python (AI/ML Runtime)
 Before we do anything else, we need to install the latest version of Python because Python as mentioned previously is ubiquitous. Python is downloaded from the Python project’s site: https://www.python.org/.
 
-##### 5.7.1.1	Conda
+##### 5.7.1.1	Conda (Package Management)
 Conda is a cross-platform and open-source management system for environments and packages. Conda allows for multiple isolated environments, each with their own packages and versions. Using Conda helps to reduce interference between projects resulting from changes to global dependencies. Conda is widely used in the AI, ML, and data science fields. Conda is installed by following the instructions provided on its project site: https://www.conda.io/.
 
 As at the time of writing, there are two flavours of Conda: Anaconda and Miniconda. The former is a complete distribution of roughly 1,500 scientific packages that have been curated and vetted for interoperability and usability. Miniconda is a minimal distribution without the bundled packages.
 
-#### 5.7.2	Bazel
+#### 5.7.2	Bazel (Build System)
 Bazel is a cross-platform and open-source tool used to build and test multi-language and multi-platform projects. Bazel is installed by following the instructions provided on its project site: https://bazel.build/.
 
 ##### 5.7.2.1	Bazelisk
@@ -163,10 +172,10 @@ Bazelisk is a cross-platform and open-source tool used to wrap and launch Bazel.
 ##### 5.7.2.2	Buildifier
 Buildifier is a cross-platform and open-source tool used to format Bazel BUILD and .bzl files using a standard convention. Buildifier is installed by following the instructions provided on its project site: https://github.com/bazelbuild/buildtools/tree/master/buildifier.
 
-#### 5.7.3	Git
+#### 5.7.3	Git (Source Control)
 Git is a cross-platform and open-source tool used for distributed version control. Git is installed by following the instructions provided on its project site: https://github.com/git-guides.
 
-#### 5.7.4	Docker Desktop
+#### 5.7.4	Docker Desktop (Containerisation)
 Docker Desktop is a cross-platform and open-source tool used to build and share containerised apps and services. Docker Desktop is installed by following the instructions provided on its project site: https://docs.docker.com/desktop/.
 
 > The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, frameworks, and libraries are available on Linux.
@@ -177,7 +186,7 @@ The Nvidia CUDA Drivers allow GPU passthrough to Docker containers running on Wi
 > It is worthwhile to consider joining the Nvidia Developer Program for access to preview drivers, learning resources, and advanced tools: https://developer.nvidia.com/.
 
 ##### 5.7.4.2	Nvidia CUDA Base Images
-For access to the latest Nvisia CUDA base images, please visit: https://hub.docker.com/r/nvidia/cuda.
+For access to the latest Nvidia CUDA base images, please visit: https://hub.docker.com/r/nvidia/cuda.
 
 #### 5.7.5	Data Layer
 Designing a data layer for an AI and ML solution is a complex topic that is beyond the scope of this guide. Assuming you’ve built a developer workstation that uses NVMe drives in a RAID-0 configuration, we have options. We could use files stored in the OS filesystem or install specific storage software.
