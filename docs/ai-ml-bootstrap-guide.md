@@ -195,7 +195,7 @@ The simplest solution would be to rely on the basic OS filesystem. More complex 
 
 Much of the datasets ingested during training and fine tuning for ML models tends to be in the Apache Parquet format. That data is generally stored in files, which tend to be created and accessed using Petastorm. Further, the results of training and fine tuning of ML models also tend to be stored within files. Accordingly, we will use the simplest solution for our Data Layer, the OS filesystem.
 
-Please note that the specific requirements for any solution’s data needs will vary based on many factors. In terms of ML, the data layer requirements for training a new model vs fine-tuning an existing model vary greatly. The reason for the variance is that training a new model is considerably more data-intensive than fine-tuning. Similarly, running an AI that makes inferences from an existing model may have anything from quite modest data layer needs to enterprise-grade needs. Such needs could depend on whether the AI runs on a single user’s device or on servers intended to serve millions.
+> Please note that the specific requirements for any solution’s data needs will vary based on many factors. In terms of ML, the data layer requirements for training a new model vs fine-tuning an existing model vary greatly. The reason for the variance is that training a new model is considerably more data-intensive than fine-tuning. Similarly, running an AI that makes inferences from an existing model may have anything from quite modest data layer needs to enterprise-grade needs. Such needs could depend on whether the AI runs on a single user’s device or on servers intended to serve millions.
 
 ##### 5.7.5.1	Petastorm
 Petastorm is a cross-platform and open-source data access library. Petastorm provides for single machine as well as distributed system training and evaluation of ML models directly from datasets within the Apache Parquet format. Petastorm is installed by following the instructions provided on its project site: https://petastorm.readthedocs.io/.
@@ -230,6 +230,15 @@ The Web API Layer can be implemented several ways; however, for reasons of perfo
 
 #### 5.7.8	Client Layer
 The Client Layer can be implemented several ways; however, for reasons of performance, security, scalability, manageability, cost, and developer productivity, only one approach per device type is recommended. For mobile devices, React Native is recommend. For web-enabled devices like laptops and desktops, ReactJS is recommended. Please ensure that TypeScript is used because it attends to the challenges caused by JavaScript at scale. Clients built using either React Native or ReactJS will integrate with the Web API Layer using auto-generated stubs provided by the OpenAPI/Swagger toolchain. Authentication and authorisation will be provided by bearer tokens using JWT.
+
+#### 5.7.9	Architecture
+Using node pools and taints in Kubernetes, the AI/ML Layer, Web API Layer, and Client Layer can all be served with a single cluster. Using nodes with appropriate hardware for each workload allows for rapid communication between the Web API Layer and the AI/ML Layer via the internal Kubernetes network. Similarly, the Data Layer can be served by a high-performance shared volume within Kubernetes. Doing so allows all AI/ML Layer containers within a pod access the pretrained model, load it into memory, and provide inference.
+
+Similarly, if training and fine-tuning are correctly coordinated and the data is stored using the Apache Parquet format, the shared volume is an effective solution. Supporting data such as user profiles, state management, etc. can easily be provided by a managed database service external to the cluster as needed.
+
+Overall, the architecture used within this project should reflect a reasonably cost-efficient, performant, flexible, and scalable service that the author hopes is meaningfully instructive.
+
+> Please note that the architecture considered can be extended to support high availability up to and including 99.999%. By using shared volume and supporting data replication within a global deployment of geo-redundant clusters and supporting services, such high availability can be achieved.
 
 ### 5.8	Next Steps
 At this point you should have a fully built, fully installed, and fully configured developer workstation for AI and ML. Nice work! Our next steps will be to familiarise ourselves with the sources of datasets and pretrained models so that we can start with a functioning AI, learn about fine-tuning, and then get into training from scratch. Please do bear in mind that training from scratch is expensive to do correctly. While a self-built developer workstation can run modest experiments for training, any sophisticated training is likely best done in the cloud. Training in the cloud allows you to pay for what you use. While still expensive, it’s orders of magnitude more affordable than buying the hardware.
