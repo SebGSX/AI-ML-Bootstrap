@@ -1,5 +1,5 @@
 # AI/ML Bootstrap
-Artificial intelligence (AI) and machine learning (ML) are exciting, cutting-edge fields. Unfortunately, they're extremely technical and can be daunting to newcomers. If you have a rough idea what AI and ML are, have good technical skills, and want to get started quickly, then this bootstrap project and its associated guide are for you.
+Artificial intelligence (AI) and machine learning (ML) are exciting, innovative fields. Unfortunately, they're extremely technical and can be daunting to newcomers. If you have a rough idea what AI and ML are, have good technical skills, and want to get started quickly, then this bootstrap project and its associated guide are for you.
 
 The code in this project provides you with a working AI based on a pretrained ML model. This project's associated guide provides insight into building your own developer workstation including hardware and software, then connects you with the community's resources, and ends with book recommendations. Everything you need to get going in one place.
 
@@ -13,3 +13,9 @@ First things first, please review the project's associated guide. Doing so will 
 
 ## Languages and Software Used
 This project is written in Python, C#, and TypeScript and leverages the software listed in the project's associated guide.
+
+## Full Disclosure
+I am not an AI or ML expert. Prior to this project, I'd never coded in Python, worked with gRPC, or touched React. I am an assembly, C/C++, and C# developer with experience with HTML, CSS, JS, TS, and Aurelia. Part of preparing this project and its docs is an exercise on my part in AI-assisted upskilling on the subject matter hereof, the bulk of which is net new to me. End-to-end, everything took me TBC. The time includes the assembly and setup of the developer workstation.
+
+## Conclusion
+TBC
