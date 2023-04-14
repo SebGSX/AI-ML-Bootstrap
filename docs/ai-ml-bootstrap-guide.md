@@ -7,7 +7,7 @@
 Published under the [MIT License](/LICENSE).
 
 ## 2	Introduction
-This document is an artificial intelligence (AI) and machine learning (ML) bootstrap guide. The guide provides instructions for technologists who want an onramp for artificial intelligence and machine learning. The author’s intention is to help accelerate the learning path so that time, energy, and other resources are used most efficiently.
+This document is an artificial intelligence (AI) and machine learning (ML) bootstrap guide. The guide provides instructions for technologists who want an onramp for artificial intelligence and machine learning. The author’s intention is to help accelerate the learning path so that time, energy, and other resources are used most efficiently. Accordingly, the guide is provided with supporting code that implements a sample, production-ready architecture that is by no means the only possible solution. Needs vary and technologies evolve, the reader is advised to plan and execute accordingly. 
 
 This guide is written for a highly technical audience unfamiliar with building AI and ML projects. That said, the author assumes that the reader has at minimum a conceptual understanding of AI and ML. As such, those concepts are not explained to keep the text concise. Similarly, it is assumed that the reader is familiar with hardware, software, infrastructure, development, architecture, infosec, DevOps, etc. and as such, those topics are not explained. The author further assumes that if the reader needs additional information that the reader will make use of resources such as ChatGPT, Google, Kindle, or similar services for help.
 
