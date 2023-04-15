@@ -1,0 +1,47 @@
+/*
+ * © 2023 Seb Garrioch. All rights reserved.
+ * Published under the MIT License.
+ */
+
+/*
+ * To generate Python stubs:
+ *   python -m grpc_tools.protoc --proto_path=. ./inference.proto --python_out=. --grpc_python_out=.
+ *
+ * For C#, the .NET 7 build engine attends to the client generation.
+ */
+
+syntax = "proto3";
+
+option csharp_namespace = "InferenceEngine";
+
+package inference_engine;
+
+/*
+ * Represents a request for the inference engine.
+ */
+message Request {
+  /*
+   * A string representing the request's text.
+   */
+  string text = 1;
+}
+
+/*
+ * Represents a response from the inference engine.
+ */
+message Response {
+  /*
+   * A string representing the response's text.
+   */
+  string text = 1;
+}
+
+/*
+ * Represents the inference service.
+ */
+service InferenceService {
+  /*
+   * Gets a response when given a request.
+   */
+  rpc GetResponse (Request) returns (Response) {}
+}
