@@ -122,8 +122,8 @@ class InferenceServicer(inference_engine_pb2_grpc.InferenceServiceServicer):
                 [self._config.HUMAN_ID])]))
 
         response: str = self._tokenizer.decode(outputs[0], skip_special_ids=True)
-        response = response.replace(request_text + ' ', '')
-        response = response.replace(self._config.HUMAN_ID + ':', '')
+        response = response.replace(request_text + " ", "")
+        response = response.replace("\n" + self._config.HUMAN_ID + ":", "")
 
         return inference_engine_pb2.Response(text=response)
 
@@ -148,7 +148,7 @@ class InferenceServicer(inference_engine_pb2_grpc.InferenceServiceServicer):
             print("Shutdown signal received.")
             self.shutdown()
 
-        print('Adding signal handlers...')
+        print("Adding signal handlers...")
         signal.signal(signal.SIGINT, shutdown_signal_handler)
         signal.signal(signal.SIGTERM, shutdown_signal_handler)
 
