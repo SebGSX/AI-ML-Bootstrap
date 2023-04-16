@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Title>InferenceApi</Title>
+        <Authors>Seb Garrioch</Authors>
+        <Description>A bootstrap guide and project to get a curious developer up and running on artificial intelligence and machine learning.</Description>
+        <Copyright>© 2023 Seb Garrioch. All rights reserved.</Copyright>
+        <PackageProjectUrl>https://github.com/SebGSX/AI-ML-Bootstrap</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/SebGSX/AI-ML-Bootstrap/blob/main/LICENSE</PackageLicenseUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\InferenceApi.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\InferenceApi.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.52.0" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.54.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <Protobuf Include="inference_engine.proto" GrpcServices="Client" />
+    </ItemGroup>
+
+</Project>
