@@ -1,4 +1,4 @@
-# Inference Engine
+# Inference API (C# and .NET)
 ## Getting Started
 The inference API is built using .NET 7 and C#. The project was developed on Windows but should work on Linux and should be editable using VS Code. Please ensure that all packages needed are install using `Nuget`.
 
