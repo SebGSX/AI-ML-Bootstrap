@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceApi", "src/InferenceApi.csproj", "{F244718C-C925-4622-B141-D46D54BC8869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FB144B3B-DF4A-4FFC-A035-15B5E8B97DBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1E94A663-3618-411F-96AC-9703262E49C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceApiTests", "tests\InferenceApiTests\InferenceApiTests.csproj", "{E093C164-9612-478F-A61B-905DF8CA73D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F244718C-C925-4622-B141-D46D54BC8869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F244718C-C925-4622-B141-D46D54BC8869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F244718C-C925-4622-B141-D46D54BC8869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F244718C-C925-4622-B141-D46D54BC8869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E093C164-9612-478F-A61B-905DF8CA73D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E093C164-9612-478F-A61B-905DF8CA73D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E093C164-9612-478F-A61B-905DF8CA73D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E093C164-9612-478F-A61B-905DF8CA73D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F244718C-C925-4622-B141-D46D54BC8869} = {FB144B3B-DF4A-4FFC-A035-15B5E8B97DBE}
+		{E093C164-9612-478F-A61B-905DF8CA73D9} = {1E94A663-3618-411F-96AC-9703262E49C0}
+	EndGlobalSection
+EndGlobal
