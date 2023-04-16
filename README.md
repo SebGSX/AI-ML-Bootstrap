@@ -20,7 +20,7 @@ This project is written in Python, C#, and TypeScript and leverages the software
 When I set out to build this project, I wanted to do some AI/ML research. Had this project existed, I would have used it. Unfortunately, I couldn't find anything that brought together everything that I needed in one place. Out of professional curiosity, I also wanted to figure out what impact AI would have in helping me learn about AI and ML. To that end, I would like to share the following information.
 
 ### Full Disclosure
-I am not an AI or ML expert. Prior to this project, I'd never coded in Python, worked with gRPC, or touched React. I am an assembly, C/C++, and C# developer with experience with HTML, CSS, JS, TS, and Aurelia. Given that the majority of the subject matter was new to me, the project presented a wonderful opportunity to investigate the effectiveness of AI-assisted learning.
+I am not an AI or ML expert. Prior to this project, I'd never coded in Python, worked with gRPC, or touched React/Next. I am an assembly, C/C++, and C# developer with experience with HTML, CSS, JS, TS, and Aurelia. Given that the majority of the subject matter was new to me, the project presented a wonderful opportunity to investigate the effectiveness of AI-assisted learning.
 
 For reference, I started work on 28 March 2023 and completed TBC. The work was done part-time in the evenings, on weekends, and on public holidays over TBC weeks. End-to-end, everything took me TBC.
 
