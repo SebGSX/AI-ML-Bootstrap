@@ -26,7 +26,7 @@ public class GrpcClientFactory : IGrpcClientFactory
     /// <inheritdoc />
     public async Task<InferenceService.InferenceServiceClient> CreateInferenceEngineClientAsync()
     {
-        using var channel = GrpcChannel.ForAddress(_options.Value.Endpoint.OriginalString);
+        var channel = GrpcChannel.ForAddress(_options.Value.Endpoint.OriginalString);
         var client = new InferenceService.InferenceServiceClient(channel);
         return await Task.FromResult(client);
     }
