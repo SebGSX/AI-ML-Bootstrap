@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AI/ML Bootstrap",
+    "description": "A bootstrap guide and project to get a curious developer up and running on artificial intelligence andmachine learning.",
+    "contact": {
+      "name": "Seb Garrioch",
+      "url": "https://github.com/SebGSX/AI-ML-Bootstrap"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/Inference": {
+      "post": {
+        "tags": [
+          "Inference"
+        ],
+        "summary": "Gets a response from the inference engine by submitting a textual request.",
+        "requestBody": {
+          "description": "A InferenceEngine.Request representing a textual request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Request"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Request"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Request": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "A string representing the request's text.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a request for the inference engine."
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "A string representing the response's text.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a response from the inference engine."
+      }
+    }
+  }
+}
