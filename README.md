@@ -47,4 +47,5 @@ First things first, the word here is acceleration. Python was a breeze to get th
 
 ## The AI
 Please see below for a screen grab of the AI from this project in action:
+
 ![image](https://user-images.githubusercontent.com/127726983/232884725-b9f1de29-bcee-479a-a72f-7ff33fb2a408.png)
