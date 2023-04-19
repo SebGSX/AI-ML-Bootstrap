@@ -23,7 +23,7 @@ When I set out to build this project, I wanted to do some AI/ML research. Had th
 ### Full Disclosure
 I am not an AI or ML expert. Prior to this project, I'd never coded in Python, worked with gRPC, or touched React/Next. I am an assembly, C/C++, and C# developer with experience with HTML, CSS, JS, TS, and Aurelia. Given that the majority of the subject matter was new to me, the project presented a wonderful opportunity to investigate the effectiveness of AI-assisted learning.
 
-For reference, I started work on 28 March 2023 and completed the work the evening of 18 April 2023. The work was done part-time in the evenings, on weekends, and on public holidays over exactly 3 weeks. End-to-end, everything took me roughly 130 hours.
+For reference, I started work on 28 March 2023 and completed the work the evening of 18 April 2023. The work was done part-time in the evenings, on weekends, and on public holidays over exactly 3 weeks. End-to-end, everything took me roughly 130 hours. For context: from 28 March 2023 to 4 April 2023, I focused on hardware research, acquisition, and assembly along with the installation / upgrade of all needed software and firmware. Coding started the evening of 5 April 2023.
 
 #### A Note of Caution
 Please note that using a publicly accessible AI service like ChatGPT may not be permitted by your organisation for your day-to-day job. Such prohibition may be due to confidentiality as well as statutory and regulatory compliance reasons. I am neither an attorney nor qualified to give legal advice, I thus urge you to obtain advice as appropriate.
