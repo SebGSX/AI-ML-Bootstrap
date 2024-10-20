@@ -5,6 +5,7 @@ __pycache__/
 
 # IDEs and editors
 .idea/
+.swc/
 .vscode/
 bin/
 obj/
