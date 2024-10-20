@@ -22,6 +22,7 @@ obj/
 *.so
 
 # Distribution / packaging
+.next/
 .Python
 build/
 develop-eggs/
