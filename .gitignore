@@ -3,6 +3,18 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# IDEs and editors
+.idea/
+.vscode/
+bin/
+obj/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs_analysis.dat
+*.ntvs_test_results.dat
+*.sln.DotSettings.user
+
 # Pre-trained model cache
 .model-cache/
 
