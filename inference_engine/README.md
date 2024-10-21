@@ -30,3 +30,14 @@ to the package, unfortunately.
 ## Tests
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
+
+## Maintenance
+
+### gRPC
+
+From time-to-time, the gRPC code will need to be regenerated. The code is generated using the `protoc` tool. The 
+following command will generate the code:
+
+```shell
+python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. inference_engine.proto
+```
