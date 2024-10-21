@@ -65,8 +65,8 @@ class TestStoppingWordsCriteria:
 
         # Arrange
         stopping_words_criteria: StoppingWordsCriteria = self.arrange_stopping_words_criteria("<animal>", mocker)
-        input_ids: torch.tensor = torch.tensor([[1, 2, 3], [4, 5, 6]])
-        scores: torch.tensor = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])
+        input_ids: torch.LongTensor = torch.LongTensor([[1, 2, 3], [4, 5, 6]])
+        scores: torch.FloatTensor = torch.FloatTensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])
 
         # Act
         result: bool = stopping_words_criteria(input_ids, scores)
@@ -81,8 +81,8 @@ class TestStoppingWordsCriteria:
 
         # Arrange
         stopping_words_criteria: StoppingWordsCriteria = self.arrange_stopping_words_criteria("<human>", mocker)
-        input_ids: torch.tensor = torch.tensor([[1, 2, 3], [4, 5, 6]])
-        scores: torch.tensor = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])
+        input_ids: torch.LongTensor = torch.LongTensor([[1, 2, 3], [4, 5, 6]])
+        scores: torch.FloatTensor = torch.FloatTensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])
 
         # Act
         result: bool = stopping_words_criteria(input_ids, scores)

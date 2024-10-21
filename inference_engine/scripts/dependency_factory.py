@@ -6,7 +6,7 @@ import torch
 from concurrent import futures
 from grpc import Server
 from inference_servicer import InferenceServicer, ModelConfiguration
-from transformers import AutoTokenizer, AutoModelForCausalLM, PreTrainedModel, PreTrainedTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, PreTrainedModel, PreTrainedTokenizer
 
 
 class DependencyFactory:
@@ -65,11 +65,13 @@ class DependencyFactory:
 
         print("Model initializing...")
 
+        quantization_config = BitsAndBytesConfig(llm_int8_threshold=200.0)
+
         model: PreTrainedModel = AutoModelForCausalLM.from_pretrained(
             model_config.MODEL_NAME,
             cache_dir=model_config.cache_dir,
             device_map="auto",
-            load_in_8bit=True)
+            quantization_config=quantization_config)
 
         print("Model initialized.")
 
