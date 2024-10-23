@@ -23,22 +23,14 @@ on Windows using a clean Linux Ubuntu 24.04 LTS distribution.
 
 ### Software
 
-The `bitsandbytes` package is essential for CUDA; however, it is quite challenging to install. Getting the package to 
-work with the NVIDIA CUDA Toolkit will take some time and will cause frustration. My apologies, there is no alternative 
-to the package, unfortunately.
-
 To simplify the process, the following steps are recommended in exact order:
 1. Install the NVIDIA CUDA Toolkit, version 12.4. You may run into an error, see the guidance within
    [this article](https://askubuntu.com/questions/1491254/installing-cuda-on-ubuntu-23-10-libt5info-not-installable) 
    to resolve the issue.
-2. Create then activate the `inference_engine` virtual environment using `conda`. Be sure to add the following 
-   channels using `conda config --add channels`:
-   - `conda-forge`
-   - `huggingface`
-   - `nvidia`
-   - `pytorch`
-3. Install `pytorch` for CUDA 12.4, `tensorflow[and-cuda]`, `bitsandbytes`, `accelerate`, `transformers[torch]`,
-   `grpcio`, `grpcio-tools`, `huggingface_hub`, `pytest`, and `pytest-mock`.
+2. Ensure that Python 3.12 and pip are installed.
+3. Install `venv` and create the `inference_engine` virtual environment.
+4. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
+   `huggingface_hub`, `pytest`, and `pytest-mock`.
 
 > If `bitsandbyts` causes issues, you may need to use the process documented within
 > [this article](https://huggingface.co/docs/bitsandbytes/main/en/installation) to compile and install the package.
@@ -46,10 +38,18 @@ To simplify the process, the following steps are recommended in exact order:
 The commands used for PyTorch and TensorFlow as well as the remaining packages are as follows:
 
 ```shell
-conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
-conda install tensorflow[and-cuda]
-conda install bitsandbytes accelerate transformers[torch] grpcio grpcio-tools pytest pytest-mock
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip3 install tensorflow
+pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub pytest pytest-mock
 ```
+
+#### References
+
+- [NVIDIA CUDA Toolkit 12.4 Installation](https://developer.nvidia.com/cuda-12-4-0-download-archive)
+- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [PyTorch Installation](https://pytorch.org/get-started/locally/)
+- [TensorFlow Installation](https://www.tensorflow.org/install)
+- [Hugging Face Transformers Installation](https://huggingface.co/docs/transformers/installation)
 
 ## Tests
 
