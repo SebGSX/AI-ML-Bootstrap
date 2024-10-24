@@ -65,15 +65,7 @@ pip3 install tensorflow
 pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub pytest pytest-mock
 ```
 
-#### References
-
-- [NVIDIA CUDA Toolkit 12.4 Installation](https://developer.nvidia.com/cuda-12-4-0-download-archive)
-- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
-- [PyTorch Installation](https://pytorch.org/get-started/locally/)
-- [TensorFlow Installation](https://www.tensorflow.org/install)
-- [Hugging Face Transformers Installation](https://huggingface.co/docs/transformers/installation)
-
-## Tests
+### Tests
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
 
@@ -87,3 +79,11 @@ following command will generate the code:
 ```shell
 python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. inference_engine.proto
 ```
+
+## References
+
+- [NVIDIA CUDA Toolkit 12.4 Installation](https://developer.nvidia.com/cuda-12-4-0-download-archive)
+- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [PyTorch Installation](https://pytorch.org/get-started/locally/)
+- [TensorFlow Installation](https://www.tensorflow.org/install)
+- [Hugging Face Transformers Installation](https://huggingface.co/docs/transformers/installation)
