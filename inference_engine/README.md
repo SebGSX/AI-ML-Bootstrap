@@ -4,22 +4,21 @@
 
 ### Note to Windows Users
 
-The inference engine code has issues when run on Windows. If developing from Windows, please be sure to install WSL 
-and configure your IDEs accordingly.
+The code will not run on Windows due to package incompatibilities. If developing from Windows, please be sure to install
+WSL and configure your IDEs accordingly.
 
 ### Hardware
 
-The inference engine is designed to run on a GPU. The code is written to use the GPU by default. If you do not have a
-GPU, you can change the code to use the CPU instead. If using CPU, a model with fewer parameters must be used.
+The code is designed to run on an NVIDIA GPU.
 
 ### Operating System
 
-The inference engine is designed to run on Linux. The code is written with PyCharm on Windows, but is run using WSL 2.0
-on Windows using a clean Linux Ubuntu 24.04 LTS distribution.
+The code is designed to run on Linux. The code is written with PyCharm on Windows, but is run using WSL 2.0 within
+Windows using a clean Linux Ubuntu 24.04 LTS distribution.
 
 > Remember to ensure that the NVIDIA CUDA Toolkit and drivers are installed on Windows for use by WSL. The NVIDIA 
-> CUDA Toolkit will also need to be installed on the Linux distribution. As always, ensure that the operating system is 
-> up-to-date before you begin.
+> CUDA Toolkit will also need to be installed on the Linux distribution. As always, ensure that all operating systems
+> are up-to-date before you begin.
 
 ### Software
 
@@ -32,11 +31,11 @@ To simplify the process, the following steps are recommended in exact order:
 4. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
    `huggingface_hub`, `pytest`, and `pytest-mock`.
 
-> If `bitsandbyts` causes issues, you may need to use the process documented within
-> [this article](https://huggingface.co/docs/bitsandbytes/main/en/installation) to compile and install the package.
+> If `bitsandbyts` causes issues, you may need to compile the package from source using the process documented within
+> [this article](https://huggingface.co/docs/bitsandbytes/main/en/installation).
 
 In Ubuntu 24.04, Python 3.12 is installed by default. The following commands are used to install the remaining 
-packages Python components:
+Python components:
 
 ```shell
 sudo apt install python3-pip
