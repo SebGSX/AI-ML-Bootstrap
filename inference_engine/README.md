@@ -27,13 +27,36 @@ To simplify the process, the following steps are recommended in exact order:
 1. Install the NVIDIA CUDA Toolkit, version 12.4. You may run into an error, see the guidance within
    [this article](https://askubuntu.com/questions/1491254/installing-cuda-on-ubuntu-23-10-libt5info-not-installable) 
    to resolve the issue.
-2. Ensure that Python 3.12 and pip are installed.
+2. Ensure that Python 3.12, pip, and the `venv` module are installed.
 3. Install `venv` and create the `inference_engine` virtual environment.
 4. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
    `huggingface_hub`, `pytest`, and `pytest-mock`.
 
 > If `bitsandbyts` causes issues, you may need to use the process documented within
 > [this article](https://huggingface.co/docs/bitsandbytes/main/en/installation) to compile and install the package.
+
+In Ubuntu 24.04, Python 3.12 is installed by default. The following commands are used to install the remaining 
+packages Python components:
+
+```shell
+sudo apt install python3-pip
+sudo apt install python3-venv
+````
+
+To create and activate the virtual environment, the following commands are used:
+
+```shell
+python3 -m venv ~/.local/share/virtualenvs/inference_engine
+source ~/.local/share/virtualenvs/inference_engine/bin/activate
+````
+
+> You'll need to configure your IDE to use the virtual environment.
+
+To deactivate the virtual environment, the following command is used:
+
+```shell
+deactivate
+````
 
 The commands used for PyTorch and TensorFlow as well as the remaining packages are as follows:
 
