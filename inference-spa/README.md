@@ -9,3 +9,11 @@ Once the environment is created and the packages have installed, the project sho
 ## Tests
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
+
+## Running the App
+
+To run the app, the following command is used from the `inference-spa` folder:
+
+```shell
+npm run dev
+```
