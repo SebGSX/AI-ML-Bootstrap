@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import inference_engine_pb2 as inference__engine__pb2
+import src.engine.inference_engine_pb2 as inference__engine__pb2
 
 
 class InferenceServiceStub(object):
