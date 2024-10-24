@@ -4,7 +4,5 @@ import os
 import sys
 
 
-_module_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
-sys.path.insert(0, _module_dir)
-_module_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts/'))
-sys.path.insert(0, _module_dir)
+_scripts_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts/'))
+sys.path.insert(0, _scripts_directory)
