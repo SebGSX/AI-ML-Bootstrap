@@ -10,7 +10,7 @@ from grpc import Server
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, PreTrainedModel, PreTrainedTokenizer
 
 
-class DependencyFactory:
+class DependencyFactory: # pragma: no cover
     """A simple factory for initializing dependencies."""
 
     @staticmethod

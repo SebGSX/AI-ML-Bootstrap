@@ -29,7 +29,7 @@ To simplify the process, the following steps are recommended in exact order:
 2. Ensure that Python 3.12, pip, and the `venv` module are installed.
 3. Install `venv` and create the `inference_engine` virtual environment.
 4. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
-   `huggingface_hub`, `pytest`, and `pytest-mock`.
+   `huggingface_hub`, `coverage`, `pytest`, and `pytest-mock`.
 
 > If `bitsandbyts` causes issues, you may need to compile the package from source using the process documented within
 > [this article](https://huggingface.co/docs/bitsandbytes/main/en/installation).
@@ -62,7 +62,7 @@ The commands used for PyTorch and TensorFlow as well as the remaining packages a
 ```shell
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 pip3 install tensorflow
-pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub pytest pytest-mock
+pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub coverage pytest pytest-mock
 ```
 
 ### Tests

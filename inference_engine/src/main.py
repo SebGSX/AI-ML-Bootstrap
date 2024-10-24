@@ -9,7 +9,7 @@ from grpc import Server
 from transformers import PreTrainedModel, PreTrainedTokenizer
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
     # Get dependencies.
     _grpc_server: Server = DependencyFactory.initialize_grpc_server(24)
     _model_config: ModelConfiguration = ModelConfiguration(".model-cache")
