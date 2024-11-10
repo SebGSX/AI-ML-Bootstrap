@@ -4,11 +4,11 @@
  */
 
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Layout from 'InferenceSPA/components/Layout';
 
 describe('Layout Component Tests', () => {
-  test('Layout loads layout components.', () => {
+  test('Layout loads layout components.', async () => {
     // Arrange
     render(<Layout><div>Test content</div></Layout>);
 
@@ -18,8 +18,10 @@ describe('Layout Component Tests', () => {
     const layoutFooterBox: HTMLElement = screen.getByTestId('layout-footer-box')
 
     // Assert
-    expect(layoutContainer).toBeInTheDocument;
-    expect(layoutContentBox).toBeInTheDocument;
-    expect(layoutFooterBox).toBeInTheDocument;
+    await waitFor(() => {
+      expect(layoutContainer).toBeInTheDocument;
+      expect(layoutContentBox).toBeInTheDocument;
+      expect(layoutFooterBox).toBeInTheDocument;
+    });
   });
 });

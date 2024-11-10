@@ -11,6 +11,10 @@ import { Card, CardContent, Typography } from '@mui/material';
  */
 export interface IMessageProps {
     /**
+     * A string representing the unique identifier of the message.
+     */
+    id: string;
+    /**
      * A string representing the name of the sender.
      */
     sender: string;

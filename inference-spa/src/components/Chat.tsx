@@ -8,6 +8,7 @@ import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { IMessageProps, Message } from './Message';
 import { Configuration, InferenceApi, Request } from 'InferenceSPA/api';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Creates the chat component. The chat component is a box that contains a list of messages exchanged, and a text field to send new messages.
@@ -39,7 +40,7 @@ export default function Chat(): JSX.Element {
   function postMessage(postSender: string, postMessage: string): void {
     setMessages((prevMessages) => [
       ...prevMessages,
-      { sender: postSender, message: postMessage, humanName: humanName }
+      { sender: postSender, message: postMessage, humanName: humanName, id: uuidv4() }
     ]);
   }
 
@@ -109,13 +110,13 @@ export default function Chat(): JSX.Element {
 
   return (
     <Box data-testid='chat-feed-box' sx={{pb: '3.5rem', pt: '1rem'}} height='100vh' display='flex' flexDirection='column' flex={1} overflow='auto'>
-      <Box  data-testid='chat-messages-box' id='messages' flex={1} overflow='auto'>
-        {messages.map((message, index) => (
-          <Message key={index} sender={message.sender} message={message.message} humanName={message.humanName} />
+      <Box data-testid='chat-messages-box' id='messages' flex={1} overflow='auto'>
+        {messages.map((message) => (
+          <Message key={message.id} id={message.id} sender={message.sender} message={message.message} humanName={message.humanName} />
         ))}
       </Box>
       <TextField data-testid='chat-textfield'
-        inputRef={textFieldRef => textFieldRef && textFieldRef.focus()}
+        inputRef={textFieldRef => textFieldRef?.focus()}
         id='human-message'
         label={waitingForResponse ? 'Waiting for response...' : 'Ask something...'}
         sx={{ bottom: 0 }}

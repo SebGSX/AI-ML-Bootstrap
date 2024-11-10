@@ -4,13 +4,14 @@
  */
 
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { IMessageProps, Message } from 'InferenceSPA/components/Message';
 
 describe('Message Component Tests', () => {
-  test('Message loads card.', () => {
+  test('Message loads card.', async () => {
     // Arrange
     const props: IMessageProps = {
+      id: "Test-ID",
       sender: 'Human',
       message: 'Hello',
       humanName: 'Human'
@@ -21,6 +22,8 @@ describe('Message Component Tests', () => {
     const messageCard: HTMLElement = screen.getByTestId('message-card')
 
     // Assert
-    expect(messageCard).toBeInTheDocument;
+    await waitFor(() => {
+      expect(messageCard).toBeInTheDocument;
+    });
   });
 });
