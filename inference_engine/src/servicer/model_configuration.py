@@ -13,7 +13,7 @@ class ModelConfiguration:
     MODEL_NAME: str = "togethercomputer/GPT-NeoXT-Chat-Base-20B"
     """A string constant representing the model's name."""
 
-    cache_dir: str = None
+    cache_dir: str = ""
     """A string representing the name and location of the cache directory used to cache model data."""
 
     def __init__(self, cache_dir: str):
