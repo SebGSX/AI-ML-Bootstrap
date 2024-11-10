@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import Message, { IMessageProps } from 'InferenceSPA/components/Message';
+import { IMessageProps, Message } from 'InferenceSPA/components/Message';
 
 describe('Message Component Tests', () => {
   test('Message loads card.', () => {

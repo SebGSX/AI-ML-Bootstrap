@@ -6,8 +6,7 @@
 import * as React from 'react';
 import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import { IMessageProps } from './Message';
-import Message from './Message';
+import { IMessageProps, Message } from './Message';
 import { Configuration, InferenceApi, Request } from 'InferenceSPA/api';
 
 /**
