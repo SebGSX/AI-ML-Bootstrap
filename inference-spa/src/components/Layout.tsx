@@ -19,7 +19,7 @@ import * as React from 'react';
  * @param props The props for the component.
  * @returns A JSX.Element representing the layout component.
  */
-export default function Layout({ children }: { children: React.ReactNode }): JSX.Element {
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>): JSX.Element {
   return (
     <>
         <Container data-testid='layout-container' maxWidth='lg'>

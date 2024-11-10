@@ -19,9 +19,6 @@ export default function Chat(): JSX.Element {
   const aiName: string = 'AI';
   const humanName: string = 'Human';
 
-  // create a reference to the TextField component
-  const textFieldRef = React.useRef<HTMLInputElement>(null);
-
   // The configuration for the inference API client.
   const apiConfig = new Configuration({ basePath: 'https://localhost:44393' });
   // The inference API client.
