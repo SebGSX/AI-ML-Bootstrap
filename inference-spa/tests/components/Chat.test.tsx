@@ -1,5 +1,5 @@
 /*
- * © 2023 Seb Garrioch. All rights reserved.
+ * © 2024 Seb Garrioch. All rights reserved.
  * Published under the MIT License.
  */
 
@@ -47,7 +47,7 @@ describe('Chat Component Tests', () => {
     const keyTyped: string = 'a';
 
     // Act
-    var chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input');
+    let chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input');
     await userEvent.type(chatTextFieldInput, keyTyped);
 
     // Assert
