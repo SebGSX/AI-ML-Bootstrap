@@ -10,7 +10,7 @@ import Layout from 'InferenceSPA/components/Layout';
 describe('Layout Component Tests', () => {
   test('Layout loads layout components.', () => {
     // Arrange
-    render(<Layout>{}</Layout>);
+    render(<Layout><div>Test content</div></Layout>);
 
     // Act
     const layoutContainer: HTMLElement = screen.getByTestId('layout-container')
