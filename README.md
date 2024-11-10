@@ -4,6 +4,10 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![issues - AI-ML-Bootstrap](https://img.shields.io/github/issues/SebGSX/AI-ML-Bootstrap)](https://github.com/SebGSX/AI-ML-Bootstrap/issues)
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=SebGSX_AI-ML-Bootstrap)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+
 ## Overview
 
 Artificial intelligence (AI) and machine learning (ML) are exciting, innovative fields. Unfortunately, they're extremely technical and can be daunting to newcomers. If you have a rough idea what AI and ML are, have good technical skills, and want to get started quickly, then this project and its associated guide are designed with you in mind.
