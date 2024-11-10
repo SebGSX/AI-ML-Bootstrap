@@ -29,17 +29,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo()
+    options.SwaggerDoc(builder.Configuration["Swagger:Configuration:Version"], new OpenApiInfo()
     {
-        Description =
-            "A bootstrap guide and project to get a curious developer up and running on artificial intelligence and" +
-            "machine learning.",
-        Title = "AI/ML Bootstrap",
-        Version = "v1",
+        Description = builder.Configuration["Swagger:Configuration:Description"],
+        Title = builder.Configuration["Swagger:Configuration:Title"],
+        Version = builder.Configuration["Swagger:Configuration:Version"],
         Contact = new OpenApiContact()
         {
-            Name = "Seb Garrioch",
-            Url = new Uri("https://github.com/SebGSX/AI-ML-Bootstrap")
+            Name = builder.Configuration["Swagger:Configuration:Contact:Name"],
+            Url = new Uri(builder.Configuration["Swagger:Configuration:Contact:Url"]!)
         }
     });
     
@@ -69,4 +67,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();

@@ -14,7 +14,7 @@ namespace InferenceApi.Controllers;
 /// </summary>
 [ApiController]
 [Route("[controller]")]
-public class InferenceController : Controller
+public class InferenceController : ControllerBase
 {
     private readonly IGrpcClientFactory _grpcClientFactory;
     private readonly ILogger<InferenceController> _logger;
