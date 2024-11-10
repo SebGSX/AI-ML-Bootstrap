@@ -13,7 +13,7 @@ from transformers import BatchEncoding, PreTrainedModel, PreTrainedTokenizer, St
 class InferenceServicer(inference_engine_pb2_grpc.InferenceServiceServicer):
     """Represents an inference servicer."""
 
-    _config: ModelConfiguration = None
+    _config: ModelConfiguration
     _grpc_server: Server = None
     _model: PreTrainedModel = None
     _tokenizer: PreTrainedTokenizer = None
