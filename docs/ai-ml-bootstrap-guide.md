@@ -1,10 +1,22 @@
 # AI/ML Bootstrap Guide
 
-## 1. Copyright & License
+## 1. Copyright, License, and Disclaimer
 
 © 2025 Seb Garrioch. All rights reserved.
 
 Published under the [MIT License](/LICENSE).
+
+**Disclaimer:** The information, recommendations, and guidance provided in this document are provided "as-is" for 
+informational and educational purposes only, based on the author's knowledge and research as of the document's creation 
+date. Artificial intelligence and machine learning technologies, including hardware, software, and related practices, 
+evolve rapidly and may become outdated or inaccurate over time. The author makes no representations, warranties, or 
+guarantees of any kind, express or implied, regarding the completeness, accuracy, reliability, suitability, or 
+availability of the content. Users are strongly advised to conduct their own independent research, verify 
+compatibility, and consult with qualified professionals before making any purchases, implementations, or decisions 
+based on this guide. The author shall not be liable for any direct, indirect, incidental, special, consequential, or 
+punitive damages arising from the use of or reliance on this document, including but not limited to financial losses, 
+hardware failures, data loss, or unmet expectations. By accessing or using this guide, you acknowledge and agree to 
+these terms.
 
 ## 2. Introduction
 
@@ -30,8 +42,8 @@ hardware, software, other technologies, data, etc., AI and ML would not be possi
 many fields and many communities. The fact that so much of the intellectual property is open source and accessible 
 to all, is both encouraging and humbling. All I can say is thank you.
 
-OpenAI's ChatGPT proofread and checked the content of this guide, which greatly improved the speed at which I was 
-able to prepare it from my notes.
+OpenAI's ChatGPT proofread and checked the initial (2023) content of this guide, which greatly improved the speed at 
+which I was able to prepare it from my notes. For the 2025 update, Grok (from xAI) provided similar assistance.
 
 ## 4. Hardware
 
@@ -40,17 +52,19 @@ able to prepare it from my notes.
 Given the proliferation of cloud-based GPUs, it is possible and arguably more cost-effective in the long-run to make 
 use of cloud-hosted developer workstations. The challenge with cloud-hosted developer workstations is that the 
 developer workflow and experience are often degraded by latency. Further, even under the best circumstances latency 
-can be created by resource contention, traffic, and outages. Latency essentially knocks developers out of the zone, 
-which impacts productivity (business concern) and psychological flow (developer concern). Accordingly, a dedicated, 
-on-premises developer workstation is recommended for reasons of productivity and enjoyment. There are fundamentally 
-three options for providing a developer workstation:
+can be created by resource contention, traffic, and outages.
 
-- Self-built workstation (least expensive but restricted to consumer hardware and requires the developer to build 
-  the workstation);
+Latency essentially knocks developers out of the zone, which impacts productivity (business concern) and psychological 
+flow (developer concern). Accordingly, a dedicated, on-premises developer workstation is recommended for reasons of 
+productivity and enjoyment. There are fundamentally four options for providing a developer workstation:
+
+- Workstation (self-built or OEM) with a Jetson Nano from Nvidia or similar external device (least expensive but can be
+  limiting unless using a high-end workstation);
+- Self-built workstation (highly customisable, cost-controllable, but requires technical skill and time to build);
 - OEM-built workstation by Dell or similar (more expensive but with access to high-end hardware and no need to 
   build the workstation); and
 - Specialist OEM-built workstation by Puget Systems or similar (most expensive but with access to the highest-end 
-  components and need to build the workstation).
+  components and no need to build the workstation).
 
 Given that OEMs like Dell and Puget Systems will provide guidance on hardware selection, this guide focuses on the 
 self-built workstation option. There are fundamentally four workloads to consider when building a workstation:
@@ -60,30 +74,33 @@ self-built workstation option. There are fundamentally four workloads to conside
 - The ML workload to train, transform, and fine-tune models, and 
 - The AI workload to perform inference from models.
 
-Training new models that are highly accurate is computationally expensive. Accordingly, the ML workload should be 
-offloaded to the cloud or to dedicated server hardware for the ML experiments that produce said models. Similarly, 
-the AI workload should be offloaded so that multiple concurrent users can be served for QA, testing, etc. That said, 
-it must be noted that performing inference from models is considerably less computationally demanding than training 
-the models, which is why models can be served on inexpensive hardware in some cases.
+Training new models from scratch (foundational models) that are highly accurate is computationally expensive. 
+Accordingly, the ML workload should be offloaded to the cloud or to dedicated server hardware for the ML experiments 
+that produce said models. Similarly, the AI workload should be offloaded so that multiple concurrent users can be 
+served for QA, testing, etc. That said, it must be noted that performing inference from models is considerably less 
+computationally demanding than training the models, which is why models can be served on inexpensive hardware in some 
+cases.
 
 Irrespective of any off-loading, the developer workstation must be able to accommodate pre-processing as well as 
-model transformation and fine-tuning experiments. The limit in task complexity directly correlates to the amount of 
+small experiments that serve as proofs-of-concept. The limit in task complexity directly correlates to the amount of 
 time taken by the workstation to compute. When the workstation is busy, the developer is idle. Accordingly, the more 
 powerful the workstation, the more complexity that can be handled in an acceptable timeframe.
 
-### 4.2. Recommended Hardware Specification for a Self-Built Developer Workstation
+Thus, hardware is an optimisation problem that balances cost and developer productivity.
 
-When reviewing the following specifications, please bear in mind that the guidance was written in March/April 2023. 
-Accordingly, the hardware specifications reflect the available hardware at the time. Whether reading this guide 
-close to the time of writing or in future, what matter most are the principles guiding the choices. The principles 
-matter because they’re designed to maximise performance in a cost-optimised manner that reduces waste caused by 
-over-spec.
+### 4.2. Recommended Minimum Hardware Specification for a Self-Built Developer Workstation
+
+When reviewing the following specifications, please bear in mind that the guidance was written initially in March/April 
+2023 then updated in September 2025. Accordingly, the hardware specifications reflect the available hardware at the 
+time. Whether reading this guide close to the time of writing or later, what matter most are the principles guiding the 
+choices. The principles matter because they’re designed to maximise performance in a cost-optimised manner that reduces 
+waste caused by over-spec.
 
 Please note that a developer workstation is no match for a cloud-based production system. Such production systems 
-typically comprise multiple nodes underpinning Kubernetes clusters. Each such node typically comprises 
-high-performance storage and vast amounts of RAM with multiple CPUs and GPUs where all the hardware is datacentre 
-quality. With libraries like JAX providing for distributed processing across multi-GPU and multi-node systems, it’s 
-best to leave the heavy lifting to the cloud services.
+typically comprise multiple nodes underpinning clusters. Each such node typically comprises high-performance storage 
+and vast amounts of RAM with multiple CPUs and GPUs where all the hardware is datacentre quality. With libraries like 
+JAX providing for distributed processing across multi-GPU and multi-node systems, it’s best to leave the heavy lifting 
+to the cloud services or a purpose-built datacentre.
 
 #### 4.2.1. Central Processing Unit (CPU)
 
@@ -94,10 +111,11 @@ creates stability challenges that are counterproductive to AI/ML work. That said
 cooling and are willing to do the work to test for stability, overclocking may be valuable. Please do bear in mind 
 that not all CPUs are created equal in terms of overclocking potential and that as such, your mileage may vary.
 
-At the time of writing, I chose the Intel 13900F CPU, which has 8 performance core, 16 efficient cores, and provides 
-for 32 threads in total. The CPU has 36MB of on-die cache, no graphics processing capability, and cannot be 
-overclocked. I chose that CPU because it is the best available consumer-grade device within the Intel range that 
-satisfies the requirements in this section.
+When I built my workstation in 2023, I chose the Intel 13900F CPU, which has 8 performance core, 16 efficient cores, 
+and provides for 32 threads in total. The CPU has 36MB of on-die cache, no graphics processing capability, and cannot 
+be overclocked. I chose that CPU because it was the best available consumer-grade device within the Intel range that 
+satisfied the requirements in this section. As of September 2025, the CPU remains a good choice and as such is the
+recommended minimum spec.
 
 > Please note that while the CPU I selected is good in terms of consumer-grade hardware, it is the minimum spec for 
 > meaningful AI/ML work.
@@ -114,9 +132,9 @@ latest double data rate (DDR) synchronous dynamic random-access memory (SD-RAM) 
 such speeds aren’t necessarily valuable. To optimise cost and performance, choose RAM that at minimum runs about as 
 fast as the CPU’s on-die cache but not faster than the CPU’s maximum turboboost frequency.
 
-At the time of writing, I chose two sets of 64GB (2x32GB) Corsair Vengeance DDR5 SD-RAM with a maximum frequency of 5,
-600Mhz. I chose that speed because that is the maximum turboboost frequency for my CPU and because my motherboard 
-and chipset support it.
+At the time of writing in 2023, I chose two sets of 64GB (2x32GB) Corsair Vengeance DDR5 SD-RAM with a maximum 
+frequency of 5,600Mhz. I chose that speed because that is the maximum turboboost frequency for my CPU and because my 
+motherboard and chipset support it.
 
 > Please note that while 128GB is the maximum that my selected motherboard supports, it is the minimum spec for 
 > meaningful AI/ML work.
@@ -131,12 +149,14 @@ sufficient cooling and that your cables are properly managed to aid airflow, whi
 > A note of caution. GPUs are notoriously hungry for energy and become more so when overclocked. While a GPU may be 
 > rated to work with a 1,000W PSU for example, overclocking will increase PSU load so be sure to provide accordingly.
 > If you do choose to overclock your GPU and your system then starts to shut down (even gracefully) without warning, 
-> your PSU likely cannot handle the extra load.
+> it may indicate that your PSU likely cannot handle the extra load.
 
-At the time of writing, I chose the Asus ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X. It has 16,384 CUDA Cores,
-24GB GDDR6X RAM, and an engine clock that runs at 2,640Mhz (OC) and 2,610Mhz (default). The device has a 384-bit 
-memory bus and a memory speed of 21Gbps. I chose that GPU because it is the best available consumer-grade device 
-within the Nvidia range that satisfies the requirements in this section.
+At the time of writing in 2023, I chose the Asus ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X. It has 16,384 CUDA 
+Cores, 24GB GDDR6X RAM, and an engine clock that runs at 2,640Mhz (OC) and 2,610Mhz (default). The device has a 384-bit 
+memory bus and a memory speed of 21Gbps. I chose that GPU because it was the best available consumer-grade device 
+within the Nvidia range that satisfied the requirements in this section. As of September 2025, the GPU remains a good 
+choice and as such is the recommended minimum spec. A Jetson Nano or similar could also be used either as standalone
+or in conjunction with the GPU.
 
 > Please note that while the GPU selected is good in terms of consumer-grade hardware, it is the minimum spec for 
 > meaningful AI/ML work.
@@ -146,38 +166,41 @@ within the Nvidia range that satisfies the requirements in this section.
 Like with RAM, when it comes to storage think big because AI and ML need lots of space. Even the fastest storage is 
 considerably slower than RAM, which means that its speed is an important concern to avoid bottlenecks. When 
 considering storage performance, a lot of things matter. The mechanism of storage, the interface, and the number of 
-storage devices working together, all contribute to storage performance. At the time of writing, the fastest 
+storage devices working together, all contribute to storage performance. At the time of writing in 2023, the fastest 
 mechanism of storage is Non-Volatile Memory Express (NVMe), and the fastest interface for storage devices is 
-Peripheral Component Interconnect Express (PCIe). NVMe drives connect via PCIe, which makes such drives the natural 
-choice for high performance. Further, GPUs connect via PCIe, which allows them to communicate directly with NVMe 
-drives. Doing so improves performance by excluding the CPU from communication. Accordingly, NVMe drives are ideal 
-for AI and ML purposes.
+Peripheral Component Interconnect Express (PCIe). NVMe storage devices connect via PCIe, which makes such devices the 
+natural choice for high performance. Further, GPUs connect via PCIe, which allows them to communicate directly with 
+NVMe devices. Doing so improves performance by excluding the CPU from communication. Accordingly, NVMe devices are 
+ideal for AI and ML purposes.
 
-When determining the speed required from the storage system, a good place to start is to look at the GPU’s memory 
-speed. The storage system serves more than just the GPU. As such, it makes sense to ensure that the minimum storage 
-read speed should comfortably exceed the GPU’s memory speed. Achieving such a performance target given the 
-limitations of NVMe, requires the use of multiple drives working together.
+When determining the speed required from the storage subsystem, a good place to start is to look at the GPU’s memory 
+speed. The storage subsystem serves more than just the GPU. As such, it makes sense to ensure that the minimum storage 
+read speed should comfortably exceed the GPU’s memory transfer speed. The GPU's memory transfer speed is the maximum 
+rate at which data can be read from or written to the GPU's memory from external devices in the system. Such speed 
+tends to be quite high. As such, achieving the desired performance target for the storage subsystem given the 
+limitations of NVMe, requires the use of multiple devices working together.
 
-Multiple drives working together is known as a redundant array of independent disks (RAID). There are many RAID 
+Multiple devices working together is known as a redundant array of independent disks (RAID). There are many RAID 
 configurations, called levels. What we need is a configuration that shares the workload equally among all 
-participating disks. RAID level 0 achieves such a requirement. Thus, the number of drives we need and how fast they 
-should be, are both guided by our storage system performance target. Generally, the maximum storage read speed 
-should be roughly 10 times the GPU’s memory speed to account for the speed differences between NVMe and RAM.
+participating disks. RAID level 0 achieves such a requirement. Thus, the number of devices we need and how fast they 
+should be, are guided by our storage subsystem's performance target as informed by the GPU's memory transfer speed. 
+Generally, the maximum storage read speed should be roughly 10 times the GPU’s memory speed to account for the speed 
+differences between NVMe and RAM in terms of latency.
 
 If for example a GPU’s memory speed is 15Gbps, the target maximum storage read speed should be 150Gbps. To satisfy 
 the example, if a motherboard supports four M.2 NVMe solid state drives (SSDs), each drive will need a maximum read 
-speed of ~4.7GB/s to meet the 150Gbps target. Generally, the smaller capacity, lower speed NVMe drives provide more 
+speed of ~4.7GB/s to meet the 150Gbps target. Generally, the smaller capacity, lower speed NVMe devices provide more 
 value per gigabyte than their larger and faster counterparts. As such, it is most cost-effective to get the maximum 
-number of drives that the motherboard will support. Once speed is addressed, scale up storage capacity bearing in 
-mind that all drives must be the same size.
+number of devices that the motherboard will support. Once speed is addressed, scale up storage capacity bearing in 
+mind that all devices must be the same specification to work together optimally in a RAID configuration.
 
-At the time of writing, I chose four Samsung Evo 980 Pro NVMe 2TB SSDs with a maximum read speed of 7GB/s. I chose 
-that type of drive because it meets the 210Gbps target calculated from my GPU’s 21Gbps memory speed. I chose the 2TB 
-option for the drive because 8TB (4x2TB) in total is both sufficient and future-proof while also being 
-cost-effective as at the time of writing.
+At the time of writing in 2023, I chose four Samsung Evo 980 Pro NVMe 2TB SSDs with a maximum read speed of 7GB/s. I 
+chose that type of device because it meets the 210Gbps target calculated from my GPU’s 21Gbps memory speed. I chose the 
+2TB option for the devices because 8TB (4x2TB) in total is both sufficient and future-proof while also being 
+cost-effective.
 
 > Though not essential, it is recommended that an external, spindle disk is used to provide for backups and the 
-> storage of non-essential data. At the time of writing, I chose a 12TB SanDisk G-Drive that connects via USB-C.
+> storage of non-essential data. At the time of writing in 2023, I chose a 12TB SanDisk G-Drive that connects via USB-C.
 
 #### 4.2.5. Motherboard
 
@@ -185,35 +208,37 @@ Motherboards are a great way to overspend. Vendors charge considerably more for 
 cool aesthetics, and support for the fastest components as well as overclocking. The trap is thinking that having 
 the fastest components will produce the best results. Generally, enthusiast level hardware is great for bragging 
 rights and not much else in a practical sense. To avoid overspending, spec your CPU, RAM, GPU, and storage then find 
-an appropriate motherboard. Even if you intend on overclocking, you likely don’t need the flagship motherboard.
+an appropriate motherboard. Even if you intend on overclocking, you likely don’t need the flagship product.
 
-> To maximise compatibility as well as aid in optimisation, it tends to be a good idea to get the motherboard from 
-> the same manufacturer as your GPU. 
+> To maximise compatibility as well as aid in optimisation, it tends to be a good idea to get your motherboard from 
+> the same manufacturer as your GPU.
 
-At the time of writing, I chose the Asus Prime Z790-A Wi-Fi motherboard. I chose that motherboard because it is the 
-best available consumer-grade device within the Asus range that satisfies the requirements in this section.
+At the time of writing in 2023, I chose the Asus Prime Z790-A Wi-Fi motherboard. I chose that motherboard because it 
+was the best available consumer-grade device within the Asus range that satisfied the requirements in this section.
 
 ### 4.3. Next Steps
 
 Once you’ve decided on the hardware you need, the next steps are sourcing the components and assembling the 
 workstation. Building a workstation is not a trivial task. Even if you’re an experienced builder, please be sure to 
-read the manuals and check that your skills are up to date. I recommend having a look in Google and on YouTube for 
-the latest guidance on how to build a workstation.
+read the manuals and check that your skills are up to date. I recommend having a chat with Grok or ChatGPT to get a
+sense of what to expect as well as recommendations for YouTube videos to watch.
 
 Further, the components you’ll buy are expensive. As such, they should be handled with care. Handling with care 
-means having an anti-static desktop mat and wrist strap, both of which being connected to an anti-static grounding 
-adapter. For your own safety, be sure to buy a reliable anti-static grounding adapter from a reputable source. 
-Additionally, an anti-static tray for keeping track of screws and washers is a blessing. In addition to anti-static 
-measures, please be sure to have the computer assembly tools and to be gentle with the components.
+means having an anti-static mat and wrist strap, both of which being connected to an anti-static grounding adapter. 
+For your own safety, be sure to buy a reliable anti-static grounding adapter from a reputable source. Additionally, 
+an anti-static tray for keeping track of screws and washers is a blessing. In addition to anti-static measures, 
+please be sure to have appropriate computer assembly tools and to be gentle with the components.
 
 I use an anti-static mat, wrist strap, and tray as well as tools provided by iFixit because they’re professional 
-grade tools. I use an anti-static ground adapter provided by NOSHOCK ESD UK. Before deciding on any of the tools 
+grade. I use an anti-static grounding adapter provided by NOSHOCK ESD UK. Before deciding on any of the tools 
 mentioned herein, please do your research for the sake of your personal safety and the safety of your components.
 
 Once everything is assembled, please ensure that you verify your cooling settings within your motherboard’s firmware.
 While quieter operation tends to be preferred, enhanced cooling improves stability and component longevity. Running 
 all cooling on maximum would be the best technical solution, but doing so is often too loud. As such, using a turbo 
 cooling profile that ramps up cooling more quickly may be the best compromise. Please be sure to adjust accordingly.
+
+> Keeping ambient temperature low with air-conditioning is another great way to reduce cooling load on the workstation.
 
 ## 5. Software and Firmware
 
