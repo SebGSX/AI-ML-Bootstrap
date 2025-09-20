@@ -26,13 +26,13 @@ To simplify the process, the following steps are recommended in exact order:
 1. Install the NVIDIA CUDA Toolkit, version 12.4. You may run into an error, see the guidance within
    [this article](https://askubuntu.com/questions/1491254/installing-cuda-on-ubuntu-23-10-libt5info-not-installable) 
    to resolve the issue.
-2. Ensure that Python 3.12, pip, and the `venv` module are installed.
-3. Install `venv` and create the `inference_engine` virtual environment.
-4. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
+2. Install cuDNN for CUDA 12.
+3. Install cuTENSOR for CUDA 12.
+4. Install cuSPARSELt for CUDA 12.
+5. Ensure that Python 3.12, pip, and the `venv` module are installed.
+6. Install `venv` and create the `inference_engine` virtual environment.
+7. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
    `huggingface_hub`, `coverage`, `pytest`, and `pytest-mock`.
-
-> If `bitsandbyts` causes issues, you may need to compile the package from source using the process documented within
-> [this article](https://huggingface.co/docs/bitsandbytes/main/en/installation).
 
 In Ubuntu 24.04, Python 3.12 is installed by default. The following commands are used to install the remaining 
 Python components:
@@ -65,7 +65,31 @@ pip3 install tensorflow
 pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub coverage pytest pytest-mock
 ```
 
-### Tests
+To update the packages, the following command is used:
+
+```shell
+source ~/.local/share/virtualenvs/inference_engine/bin/activate
+pip install --upgrade pip
+pip list --outdated
+pip install --upgrade <<package_name>>
+```
+
+> **Note:** Replace `<<package_name>>` with the name of each package to be updated in turn.
+
+To update all packages, the following command is used:
+
+```shell
+source ~/.local/share/virtualenvs/inference_engine/bin/activate
+pip list --outdated | awk 'NR>2 {print $1}' | xargs pip install --upgrade
+````
+
+To create a `requirements.txt` file, the following command is used:
+
+```shell
+pip freeze > requirements.txt
+```
+
+### Testing
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
 
