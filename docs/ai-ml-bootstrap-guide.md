@@ -571,14 +571,84 @@ start building an AI/ML app. To get you started, I’ve provided code on GitHub:
 https://github.com/SebGSX/AI-ML-Bootstrap, the code is in the same repo as this guide. Don’t forget to review the 
 literature section in this guide for detailed information. Good luck with your journey!
 
-## 7. Literature
+## 7. Foundational Literature
 
-In addition to the many courses available online such as those provided by Kaggle, the following books are great 
-sources of information:
+In addition to the many courses available online such as those provided by Microsoft, Amazon, Google, HuggingFace, 
+DeepLearning.ai, Kaggle, etc., the following foundational literature is highly recommended.
 
-- The Princeton Companion to Mathematics by Timothy Gowers, June Barrow-Green, and Imre Leader
-- Linear Algebra by Georgi E. Shilov
-- Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+### 7.1. Foundations of Machine Learning and Deep Learning
+
+- **Research Papers**
+  - *Learning Representations by Backpropagating Errors*, Rumelhart, D., Hinton, G., & Williams, R. Learning
+    representations by back-propagating errors. *Nature* **323**, 533–536 (1986). https://doi.org/10.1038/323533a0.
+  - *Long short-term memory*, Hochreiter, S., & Schmidhuber, J. Long short-term memory. *Neural Computation*
+    **9(8)**, 1735–1780 (1997). https://doi.org/10.1162/neco.1997.9.8.1735.
+  - *Efficient Estimation of Word Representations in Vector Space*, Mikolov, T., Chen, K., Corrado, G., & Dean, J.
+    Efficient estimation of word representations in vector space. *arXiv:1301.3781* (2013).
+    https://doi.org/10.48550/arXiv.1301.3781.
+- **Books**
+  - *Linear Algebra Done Right* (3rd Edition) by Axler (2024)
+  - *Deep Learning* by Goodfellow, Bengio, & Courville (2016)
+  - *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* (3rd Edition) by Géron (2022)
+  - *Understanding Deep Learning* by Prince (2023)
+
+### 7.2. Transformers
+
+- **Research Papers**
+  - *Attention Is All You Need*, Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., 
+    Kaiser, L., & Polosukhin, I. Attention is all you need. *arXiv:1706.03762* (2017). 
+    https://doi.org/10.48550/arXiv.1706.03762.
+  - *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*, Devlin, J., Chang, M.,
+    Lee, K., & Toutanova, K. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.
+    *arXiv:1810.04805* (2018). https://doi.org/10.48550/arXiv.1810.04805.
+  - *Improving Language Understanding by Generative Pre-Training*, Radford, A., & Narasimhan, K. Improving
+    Language Understanding by Generative Pre-Training. *OpenAI* (2018). 
+    https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf.
+  - *Language Models are Unsupervised Multitask Learners*, Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & 
+    Sutskever, I. Language Models are Unsupervised Multitask Learners. *OpenAI* (2019). 
+    https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf.
+  - *Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer*, Raffel, C. et al. Exploring 
+    the Limits of Transfer Learning with a Unified Text-to-Text Transformer. *J. Mach. Learn. Res.* **21**, 
+    140:1-140:67 (2019). https://doi.org/10.48550/arXiv.1910.10683.
+  - *Language Models are Few-Shot Learners*, Brown, T.B. et al. Language Models are Few-Shot Learners. 
+    *arXiv:2005.14165* (2020). https://doi.org/10.48550/arXiv.2005.14165.
+- **Books**
+  - *Transformers for Natural Language Processing* by Tunstall, von Werra, & Wolf (2022)
+
+### 7.3. Scaling and Training Dynamics
+
+- **Research Papers**
+  - *Scaling Laws for Neural Language Models*, Kaplan, J., McCandlish, S., Henighan, T.J., Brown, T.B., Chess, B., 
+    Child, R., Gray, S., Radford, A., Wu, J., & Amodei, D. Scaling Laws for Neural Language Models. 
+    *arXiv:2001.08361* (2020). https://doi.org/10.48550/arXiv.2001.08361.
+  - *Scaling Language Models: Methods, Analysis & Insights from Training Gopher*, Rae, J.W. et al. Scaling Language 
+    Models: Methods, Analysis & Insights from Training Gopher. * arXiv:2112.11446* (2021). 
+    https://doi.org/10.48550/arXiv.2112.11446.
+  - *PaLM: Scaling Language Modeling with Pathways*, Chowdhery, A. et al. PaLM: Scaling Language Modeling with 
+    Pathways. *arXiv:2204.02311* (2022). https://doi.org/10.48550/arXiv.2204.02311.
+  - *Training Compute-Optimal Large Language Models*, Hoffmann, J. et al. Training Compute-Optimal Large Language 
+    Models. *arXiv:2203.15556* (2022). https://doi.org/10.48550/arXiv.2203.15556.
+
+### 7.4. Fine-tuning and Alignment
+
+- **Research Papers**
+  - *Fine-Tuning Language Models from Human Preferences*, Ziegler, D.M., Stiennon, N., Wu, J., Brown, T.B., 
+    Radford, A., Amodei, D., Christiano, P., & Irving, G. Fine-Tuning Language Models from Human Preferences.
+    *arXiv:1909.08593* (2019). https://doi.org/10.48550/arXiv.1909.08593.
+  - *Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models*, Srivastava, A. et 
+    al. Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models. 
+    *arXiv:2206.04615* (2022). https://doi.org/10.48550/arXiv.2206.04615.
+  - *Training language models to follow instructions with human feedback*, Ouyang, L. et al. Training language models 
+    to follow instructions with human feedback. *arXiv:2203.02155* (2022). https://doi.org/10.48550/arXiv.2203.02155.
+
+### 7.5. Prompt Engineering
+
+- **Research Papers**
+  - *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*, White, J., Fu, Q., Hays, S., Sandborn, M., 
+    Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D.C. A Prompt Pattern Catalog to Enhance Prompt 
+    Engineering with ChatGPT. *arXiv:2302.11382* (2023). https://doi.org/10.48550/arXiv.2302.11382.
+
+## 8. Mechanical Sympathy
 
 Given compute-intensive nature of AI and ML, the author cannot over-emphasise the importance of good mechanical 
 sympathy on the part of developers. Understanding modern computing at a deep level and being able to code in 
