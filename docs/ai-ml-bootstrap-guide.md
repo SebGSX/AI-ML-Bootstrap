@@ -47,6 +47,13 @@ which I was able to prepare it from my notes. For the 2025 update, Grok (from xA
 
 ## 4. Hardware
 
+When originally written in March/April 2023, I followed the principles outlined in this section to build a developer
+workstation that is still viable in September 2025. While you can certainly use the principles to build a current
+workstation with contemporary hardware, you can also use the 2023 specification as a minimum viable spec. If budget
+permits, I recommend sourcing contemporary hardware that targets the maximum specification for the components outlined
+in this section as guided by the principles defined. Doing so will future-proof your investment. If budget is a concern,
+then adjust your specification to fall between the 2023 minimum and the potential maximum specification.
+
 ### 4.1. Overview
 
 Given the proliferation of cloud-based GPUs, it is possible and arguably more cost-effective in the long-run to make 
