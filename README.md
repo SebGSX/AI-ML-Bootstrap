@@ -138,7 +138,7 @@ unexpected but fortunate manner.
 
 > As of September 2025, the findings remain valid.
 
-## The AI
+## The AI Chatbot
 
 Please see below for a screen capture of the chatbot AI built in this project:
 
