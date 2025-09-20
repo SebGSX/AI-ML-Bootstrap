@@ -20,19 +20,28 @@ guide provides insight into building your own developer workstation including ha
 you with the community's resources, and ends with book recommendations. In other words, all the resources you need 
 in one place to get started quickly.
 
-> Comments, suggestions, contributions, and criticisms are most welcome.
+The project includes the following key components:
 
-## AI/ML Bootstrap Guide
+1. **AI/ML Bootstrap Guide:** The [AI/ML Bootstrap Guide](/docs/ai-ml-bootstrap-guide.md) provides all the core content you need to help you get 
+   started from building a developer workstation, and installing software to finding datasets, models, and foundational 
+   literature.
+2. **Inference Engine:** The [Inference Engine](/inference_engine) is a Python-based gRPC server that loads a 
+   pretrained model and exposes it via a gRPC interface. The engine is designed to be modular and extensible, allowing 
+   you to swap out models as needed. The models are sourced from [Hugging Face](https://huggingface.co/). Please follow
+   the instructions in the [Inference Engine README](/inference_engine/README.md) to get started.
+3. **Inference API:** The [Inference API](/inference_api) is a .NET Web API that acts as a wrapper for the Inference 
+   Engine. It exposes RESTful endpoints that can be consumed by front-end applications. Please follow the instructions 
+   in the [Inference API README](/inference_api/README.md) to get started.
+4. **Inference SPA:** The [Inference SPA](/inference_spa) is a React/Next front-end application that provides a user 
+   interface for interacting with the Inference API. It allows users to input text prompts and receive responses from 
+   the AI chatbot. Please follow the instructions in the [Inference SPA README](/inference_spa/README.md) to get 
+   started.
 
-A full guide for this project is provided [AI/ML Bootstrap Guide](/docs/ai-ml-bootstrap-guide.md).
+## Intended Audience
 
-## Getting Started
-
-First things first, please review the project's associated guide. Doing so will help to ensure that your developer 
-workstation has everything it needs. Secondly, please clone the repo, build the artefacts, and run the app to have 
-your very own AI buddy.
-
-> The audience is assumed to be technically proficient with professional-grade skill.
+The audience is assumed to be technically proficient with professional-grade skill in software engineering. The 
+audience should be able to build a developer workstation from component parts, install and configure operating systems, 
+and install and configure software.
 
 ## Languages and Software Used
 
