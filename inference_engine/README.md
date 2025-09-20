@@ -65,6 +65,14 @@ pip3 install tensorflow
 pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub coverage pytest pytest-mock
 ```
 
+## Testing
+
+Tests are provided to make changing the code easier, which facilitates learning activities.
+
+## Maintenance
+
+### Packages
+
 To update the packages, the following command is used:
 
 ```shell
@@ -88,12 +96,6 @@ To create a `requirements.txt` file, the following command is used:
 ```shell
 pip freeze > requirements.txt
 ```
-
-### Testing
-
-Tests are provided to make changing the code easier, which facilitates learning activities.
-
-## Maintenance
 
 ### gRPC
 
