@@ -9,7 +9,7 @@ Once the environment is created and the packages have been installed, the projec
 the project provides a web API that consumes the inference engine gRPC service. This project is consumed by the React
 SPA.
 
-## Tests
+## Testing
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
 
