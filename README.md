@@ -24,7 +24,7 @@ in one place to get started quickly.
 
 ## AI/ML Bootstrap Guide
 
-A full guide for this project is provided [here](/docs/ai-ml-bootstrap-guide.md).
+A full guide for this project is provided [AI/ML Bootstrap Guide](/docs/ai-ml-bootstrap-guide.md).
 
 ## Getting Started
 
@@ -32,18 +32,17 @@ First things first, please review the project's associated guide. Doing so will 
 workstation has everything it needs. Secondly, please clone the repo, build the artefacts, and run the app to have 
 your very own AI buddy.
 
-> My assumption here is that the reader is highly technical and familiar with cloning repos, setting environments, 
-> building source code, running tests, etc.
+> The audience is assumed to be technically proficient with professional-grade skill.
 
 ## Languages and Software Used
 
-This project is written in Python, C#, and TypeScript and leverages the software listed in the project's associated 
-guide.
+This project is written in Python, C#, and TypeScript and leverages the software listed in the project's associated
+[AI/ML Bootstrap Guide](/docs/ai-ml-bootstrap-guide.md).
 
 ## Author's Motivation
 
-When I set out to build this project, I wanted to do some AI/ML research. Had this project existed, I would have 
-used it. Unfortunately, I couldn't find anything that brought together everything that I needed in one place. Out of 
+When I set out to build this project in 2023, I wanted to do some AI/ML research. Had this project existed, I would 
+have used it. Unfortunately, I couldn't find anything that brought together everything I needed in one place. Out of 
 professional curiosity, I also wanted to figure out what impact AI would have in helping me learn about AI and ML. 
 To that end, I would like to share the following information.
 
@@ -51,16 +50,18 @@ To that end, I would like to share the following information.
 
 ### Full Disclosure
 
-I am not an AI or ML expert. Prior to this project, I'd never coded in Python, worked with gRPC, or touched 
-React/Next. I am an assembly, C/C++, and C# developer with experience with HTML, CSS, JS, TS, and Aurelia. Given 
-that the majority of the subject matter was new to me, the project presented a wonderful opportunity to investigate 
-the effectiveness of AI-assisted learning.
+I am not an AI or ML expert. Prior to this project, I had never coded in Python, worked with gRPC, or touched 
+React/Next. I am an assembly, C/C++, and C# developer with experience in HTML, CSS, JS, TS, and Aurelia. Given 
+that the majority of the material was new to me, the project presented a wonderful opportunity to investigate the 
+effectiveness of AI-assisted learning.
 
-For reference, I started work on 28 March 2023 and completed the work the evening of 18 April 2023. The work was 
-done part-time in the evenings, on weekends, and on public holidays over exactly 3 weeks. End-to-end, everything 
+For reference, I started the 2023 work on 28 March 2023 and completed the work the evening of 18 April 2023. The work 
+was done part-time in the evenings, on weekends, and on public holidays over three weeks. End-to-end, everything 
 took me roughly 130 hours. For context: from 28 March 2023 to 4 April 2023, I focused on hardware research, 
 acquisition, and assembly along with the installation / upgrade of all needed software and firmware. Coding started 
 the evening of 5 April 2023.
+
+> As of September 2025, the findings remain valid.
 
 #### A Note of Caution
 
@@ -68,30 +69,34 @@ Please note that using a publicly accessible AI service like ChatGPT may not be 
 your day-to-day job. Such prohibition may be due to confidentiality as well as statutory and regulatory compliance 
 reasons. I am neither an attorney nor qualified to give legal advice, I thus urge you to obtain advice as appropriate.
 
-I am able to use ChatGPT freely in this context because the entire project is open-source and I own all the IP. 
-Specifically, I built the project using my own time, software, services, hardware, etc and did so outside the course 
-and scope of my employment meaning that I legitimately own the intellectual property and all rights under copyright. 
-Your circumstances may differ, I strongly recommend you obtain advice as appropriate.
+I was able to use ChatGPT freely in this context because the entire project is open-source and I own all the IP. 
+Specifically, I built the project using my own time, software, services, hardware, etc. and did so outside the course 
+and scope of my employment. As such, I legitimately own the intellectual property and all rights under copyright. 
+Your circumstances may differ, I strongly recommend that you obtain advice as appropriate.
+
+> As of September 2025, the above note remains valid.
 
 #### AI-Assisted Proofreading and Copyediting
 
-ChatGPT assisted greatly in preparing all documentation for this project. The AI assisted with proofreading and 
-copyediting by assessing accuracy, completeness, and style as well as tone. The AI assessed style and tone in terms 
-of grammar, politeness, professionalism, and spelling.
+ChatGPT assisted greatly in preparing all initial (2023) documentation for this project. The AI assisted with 
+proofreading and copyediting by assessing accuracy, completeness, and style as well as tone. The AI assessed style 
+and tone in terms of grammar, politeness, professionalism, and spelling. As of September 2025, I continue to use AIs 
+for proofreading and copyediting; however, I now use Grok.
 
 #### AI-Assisted Learning
 
 When learning, time is a vital factor. Given the gaps and other shortcomings in my expertise noted in this full 
 disclosure section, traditional learning methods would have been too time-consuming for a part-time project. With 
-ChatGPT, I have an on-demand, cost-effective tutor that is also a polymath. No more searching through Google, Stack 
-Exchange, GitHub, Kindle books, package code, sample code, research papers, etc.; all I need do is ask ChatGPT.
+AI, I had and continue to have, an on-demand, cost-effective tutor that is also a polymath. No more searching through 
+Google, Stack Exchange, GitHub, Kindle books, package code, sample code, research papers, etc.; all I need do is ask 
+the AI for help. That doesn't negate good reference material, but it does make finding the right reference material less
+time-consuming.
 
 Don't get me wrong, traditional tools are great; however, the number of dead ends, rabbit holes, and wild goose 
-chases caused by the ineptitude of being a newcomer are highly wasteful. Good as they are, search engines struggle 
-with context, which also wastes time. By contrast, having an ever-patient tutor that can just as quickly answer a 
-question about coding as it can about the best way to phrase something, is an efficiency windfall. Add to that the 
-ability to create effective samples, and AI-assisted learning can be a highly efficient way to learn when used 
-correctly.
+chases caused by the difficulties inherent to being a newcomer are highly wasteful. By contrast, having an 
+ever-patient tutor that can just as quickly answer a question about coding as it can about the best way to phrase 
+something, is an efficiency windfall. Add to that the ability to create effective samples, and AI-assisted learning 
+can be a highly efficient way to learn when used correctly.
 
 > While AI-assisted learning is a game-changer by any definition, it isn't infallible. Just like all tutors, AIs 
 > make mistakes whether from issues with their training, issues with out-of-date information, or unintended biases. 
@@ -99,27 +104,34 @@ correctly.
 > how much the learner invests. While AI-assisted learning is highly efficient if used correctly, investment of time,
 > energy, and effort remains the determinant of the value derived.
 
+> As of September 2025, the findings remain valid.
+
 #### AI-Assisted Coding
 
 First things first, the word here is acceleration. Python was a breeze to get through with the help of ChatGPT. It's 
 a lovely language and the type hints as well as object orientation made me feel right at home. It didn't take long 
-for me to write testable code following the SOLID principles as well as the factory and options patterns. The .
-NET/C# work was a breeze despite my last project was .NET 5 (version 7 at time of writing). Then came the front-end 
-code. I struggled 1 Sunday and 2 evenings because I'm not a strong front-end coder. Nonetheless, I managed to pull 
-together the app in barely 6 hours. The rest of the time was spent figuring out how to test correctly.
+for me to write testable code following the SOLID principles as well as the factory and options patterns. The 
+.NET/C# work was a breeze despite my last project being .NET 5 (despite version 7 at time of writing in 2023). Then 
+came the front-end code. I struggled for one Sunday and two evenings because I'm not a strong front-end coder. 
+Nonetheless, I managed to pull together the app in barely 6 hours. The rest of the time was spent figuring out how to 
+test the front-end code correctly.
 
-> Like AI-assisted learning, AI-assisted coding is a game-changer. That said, where I had good skill that translated 
-> well, I moved quickly and painlessly. But, where I had skills gaps, the AIs and me led each other in circles. 
-> Accordingly, taking a pairing view with a healthy understanding of both the human and AI participants, exceptional 
-> results can be achieved. As with any team, all members need to do what is required to make the teamwork. In 
-> AI/human coding pairs, the human really needs to understand the work to guide the AI. The AI is great with detail 
-> when given explicit guidance whereas the human needs to prepare the guidance and check the results produced. I can 
-> say with confidence that the AIs challenged me to think more deeply about the coding challenges we were taking on, 
-> which improved my skills in an unexpected but fortune manner.
+Like AI-assisted learning, AI-assisted coding is a game-changer. That said, where I had good skill that translated 
+well, I moved quickly and painlessly. But, where I had gaps, the AIs and me led each other in circles. Accordingly, 
+taking a pairing view with a healthy understanding of both the human and AI participants, exceptional results can be 
+achieved.
+
+As with any team, all members need to do what is required to help the team succeed. In AI/human coding pairs, the human 
+really needs to understand the work to guide the AI. The AI is great with detail when given explicit guidance 
+whereas the human needs to prepare the guidance and check the results produced. I can say with confidence that the 
+AIs challenged me to think more deeply about the coding objectives we were addressing, which improved my skills in an 
+unexpected but fortunate manner.
+
+> As of September 2025, the findings remain valid.
 
 ## The AI
 
-Please see below for a screen grab of the AI from this project in action:
+Please see below for a screen capture of the chatbot AI built in this project:
 
 ![image](https://user-images.githubusercontent.com/127726983/232884725-b9f1de29-bcee-479a-a72f-7ff33fb2a408.png)
 
