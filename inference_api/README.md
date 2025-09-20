@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-The inference API is built using .NET 8.0 and C#. The project was developed on Windows but should work on Linux and
+The inference API is built using .NET 9.0 and C#. The project was developed on Windows but should work on Linux and
 should be editable using VS Code. Please ensure that all packages needed are install using `Nuget`.
 
 Once the environment is created and the packages have been installed, the project should be ready to run. Once running,
