@@ -7,12 +7,12 @@ import * as React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Chat from 'InferenceSPA/components/Chat';
-import { rest } from 'msw';
+import { http } from 'msw';
 import { setupServer } from 'msw/node';
 
 const server = setupServer(
-  // Create a mock API handler using the `rest` object from `msw`.
-  rest.post('https://localhost:44393/inference', (req, res, ctx) => {
+  // Create a mock API handler using the `http` object from `msw`.
+  http.post('https://localhost:44393/inference', (req, res, ctx) => {
     return res(ctx.json({ text: 'Hi Human!' }));
   })
 );

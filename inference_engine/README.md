@@ -65,7 +65,7 @@ pip3 install tensorflow
 pip3 install bitsandbytes accelerate transformers grpcio grpcio-tools huggingface_hub coverage pytest pytest-mock
 ```
 
-## Testing
+### Testing
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
 

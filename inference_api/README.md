@@ -9,16 +9,16 @@ Once the environment is created and the packages have been installed, the projec
 the project provides a web API that consumes the inference engine gRPC service. This project is consumed by the React
 SPA.
 
-## Testing
+### Testing
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
+
+### Running the API
+
+The `InferenceApi-CSharp/src/Properties/launchSettings.json` file contains the configuration for the API. The API must
+be run using the `InferenceApi:https` profile.
 
 ## Exclusions
 
 Scripts needed to automate building, texting, coverage, and containerisation are excluded given that examples of such
 are readily available elsewhere.
-
-## Running the API
-
-The `InferenceApi-CSharp/src/Properties/launchSettings.json` file contains the configuration for the API. The API must
-be run using the `InferenceApi:https` profile.
