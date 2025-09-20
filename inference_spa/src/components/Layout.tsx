@@ -1,5 +1,5 @@
 /*
- * © 2024 Seb Garrioch. All rights reserved.
+ * © 2025 Seb Garrioch. All rights reserved.
  * Published under the MIT License.
  */
 
@@ -45,7 +45,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
             width: '100%'
           }}
           component='footer'>
-            <Typography sx={{ textAlign: 'center' }} variant='body2'>&copy; 2023 Seb Garrioch. Published under the <Link href='https://github.com/SebGSX/AI-ML-Bootstrap/blob/main/LICENSE' target='_blank'>MIT License</Link>.</Typography>
+            <Typography sx={{ textAlign: 'center' }} variant='body2'>&copy; 2025 Seb Garrioch. All rights reserved. Published under the <Link href='https://github.com/SebGSX/AI-ML-Bootstrap/blob/main/LICENSE' target='_blank'>MIT License</Link>.</Typography>
         </Box>
     </>
   );
