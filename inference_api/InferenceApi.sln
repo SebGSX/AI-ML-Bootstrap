@@ -4,9 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceApi", "src/Inferen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FB144B3B-DF4A-4FFC-A035-15B5E8B97DBE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1E94A663-3618-411F-96AC-9703262E49C0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1E94A663-3618-411F-96AC-9703262E49C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceApiTests", "tests/InferenceApiTests.csproj", "{E093C164-9612-478F-A61B-905DF8CA73D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceApi.UnitTests", "test/InferenceApi.UnitTests.csproj", "{E093C164-9612-478F-A61B-905DF8CA73D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{46F03A1B-6459-4783-9E77-03FCACBBF0F4}"
 	ProjectSection(SolutionItems) = preProject

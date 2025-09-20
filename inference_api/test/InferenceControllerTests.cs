@@ -9,7 +9,7 @@ using InferenceApi.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace InferenceApiTests;
+namespace InferenceApi.UnitTests;
 
 /// <summary>
 /// Tests <see cref="InferenceController"/>.

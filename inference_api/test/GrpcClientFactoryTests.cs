@@ -3,7 +3,7 @@
  * Published under the MIT License.
  */
 
-namespace InferenceApiTests;
+namespace InferenceApi.UnitTests;
 
 /// <summary>
 /// Tests <see cref="GrpcClientFactory"/>.
