@@ -8,6 +8,22 @@ and should be editable using VS Code. Please ensure that all packages needed are
 Once the environment is created and the packages have installed, the project should be ready to run. Once running, 
 the project provides a web app that consumes the inference API, which then consumes the inference engine gRPC service.
 
+## Maintenance
+
+If not already installed, install the npm-check-updates package globally:
+
+```shell
+npm install -g npm-check-updates
+```
+
+To update the packages, the following commands are used:
+
+```shell
+npm update npm
+npm-check-updates -u
+npm install
+```
+
 ## Testing
 
 Tests are provided to make changing the code easier, which facilitates learning activities.
