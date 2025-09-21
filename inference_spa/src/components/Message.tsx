@@ -3,7 +3,7 @@
  * Published under the MIT License.
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 
 /**
@@ -36,9 +36,9 @@ export interface IMessageProps {
 export function Message({ sender, message, humanName }: Readonly<IMessageProps>) {
     const variant = sender === humanName ? 'outlined' : 'elevation';
     return (
-        <Card data-testid='message-card' sx={{ mb: '0.5rem'}} variant={variant}>
-            <CardContent sx={{ px: '1rem', py: '0.5rem' }}>
-                <Typography sx={{ mr: '1rem' }} variant='subtitle2' component='span'>{sender}:</Typography>
+        <Card data-testid='message-card' sx={{mb: '0.5rem'}} variant={variant}>
+            <CardContent sx={{px: '1rem', py: '0.5rem'}}>
+                <Typography sx={{mr: '1rem'}} variant='subtitle2' component='span'>{sender}:</Typography>
                 <Typography variant='body2' component='span'>{message}</Typography>
             </CardContent>
         </Card>

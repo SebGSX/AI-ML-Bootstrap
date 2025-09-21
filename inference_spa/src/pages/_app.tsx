@@ -21,12 +21,12 @@ const darkTheme = createTheme({
  * @returns A JSX.Element representing the rendered component.
  */
 export default function InferenceSpaApp({ Component, pageProps }: AppProps) {
-  return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={darkTheme}>
+            <CssBaseline/>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </ThemeProvider>
+    );
 }
