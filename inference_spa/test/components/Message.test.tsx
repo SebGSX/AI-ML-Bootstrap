@@ -7,7 +7,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Message } from 'InferenceSPA/components/Message'; // Adjust path if necessary
+import { Message } from 'InferenceSPA/components/Message';
 
 /**
  * Tests that the Message component renders correctly.
