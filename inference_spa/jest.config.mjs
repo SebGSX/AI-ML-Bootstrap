@@ -7,13 +7,13 @@ import nextJest from 'next/jest.js'
 
 // Create a Next.js Jest config.
 const createJestConfig = nextJest({
-  dir: './',
+    dir: './',
 })
 
 // Add additional Jest config.
-/** @type {import('jest').Config} */
 const config = {
-  testEnvironment: 'jest-environment-jsdom',
+    coverageProvider: 'v8',
+    testEnvironment: 'jsdom',
 }
 
 // Export the combined Jest config.

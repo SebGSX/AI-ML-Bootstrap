@@ -1,3 +1,8 @@
+/*
+ * © 2025 Seb Garrioch. All rights reserved.
+ * Published under the MIT License.
+ */
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [

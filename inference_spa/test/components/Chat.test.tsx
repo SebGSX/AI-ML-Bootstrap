@@ -3,138 +3,139 @@
  * Published under the MIT License.
  */
 
-import * as React from 'react';
+import React from 'react';
+import '@testing-library/jest-dom';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Chat from 'InferenceSPA/components/Chat';
-import { http } from 'msw';
+import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 
 const server = setupServer(
-  // Create a mock API handler using the `http` object from `msw`.
-  http.post('https://localhost:44393/inference', (req, res, ctx) => {
-    return res(ctx.json({ text: 'Hi Human!' }));
-  })
+    // Create a mock API handler using the `http` object from `msw`.
+    http.post('https://localhost:44393/inference', () => {
+        return HttpResponse.json({text: 'Hi Human!'}, {status: 200});
+    }),
 );
 
 describe('Chat Component Tests', () => {
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+    beforeAll(() => server.listen());
+    afterEach(() => server.resetHandlers());
+    afterAll(() => server.close());
 
-  test('Chat loads appropriate components.', async () => {
-    // Arrange
-    render(<Chat />);
+    test('Chat loads appropriate components.', async () => {
+        // Arrange
+        render(<Chat/>);
 
-    // Act
-    const chatFeedBox: HTMLElement = screen.getByTestId('chat-feed-box');
-    const chatMessagesBox: HTMLElement = screen.getByTestId('chat-messages-box');
-    const chatTextField: HTMLTextAreaElement = screen.getByTestId('chat-textfield');
-    const chatSendButton: HTMLButtonElement = screen.getByTestId('chat-sendbutton');
-    const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
+        // Act
+        const chatFeedBox: HTMLElement = screen.getByTestId('chat-feed-box');
+        const chatMessagesBox: HTMLElement = screen.getByTestId('chat-messages-box');
+        const chatTextField: HTMLTextAreaElement = screen.getByTestId('chat-textfield');
+        const chatSendButton: HTMLButtonElement = screen.getByTestId('chat-sendbutton');
+        const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
 
-    // Assert
-    await waitFor(() => {
-      expect(chatFeedBox).toBeInTheDocument;
-      expect(chatMessagesBox).toBeInTheDocument;
-      expect(chatTextField).toBeInTheDocument;
-      expect(chatSendButton).toBeInTheDocument;
-      expect(messageCards.length).toBe(0);
-    });
-  });
-
-  test('Chat text field updates value on key typed.', async () => {
-    // Arrange
-    render(<Chat />);
-    const keyTyped: string = 'a';
-
-    // Act
-    let chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input');
-    await act(async () => {
-      await userEvent.type(chatTextFieldInput, keyTyped)
+        // Assert
+        await waitFor(() => {
+            expect(chatFeedBox).toBeInTheDocument();
+            expect(chatMessagesBox).toBeInTheDocument();
+            expect(chatTextField).toBeInTheDocument();
+            expect(chatSendButton).toBeInTheDocument();
+            expect(messageCards.length).toBe(0);
+        });
     });
 
-    // Assert
-    await waitFor(() => {
-      expect(chatTextFieldInput.value).toBe(keyTyped);
-    });
-  });
+    test('Chat text field updates value on key typed.', async () => {
+        // Arrange
+        render(<Chat/>);
+        const keyTyped: string = 'a';
 
-  test('Completed chat text field resets on <ENTER> pressed.', async () => {
-    // Arrange
-    render(<Chat />);
+        // Act
+        let chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input');
+        await act(async () => {
+            await userEvent.type(chatTextFieldInput, keyTyped)
+        });
 
-    // Act
-    const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input') as HTMLTextAreaElement;
-    await act(async () => {
-      await userEvent.type(chatTextFieldInput, 'Hi AI!');
-    });
-    chatTextFieldInput.focus();
-    await act(async () => {
-      await userEvent.keyboard('{enter}');
-    });
-    const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
-
-    // Assert
-    await waitFor(() => {
-      expect(chatTextFieldInput.value).toBe('');
-      expect(messageCards.length).toBe(2);
-    });
-  });
-
-  test('Completed chat text field resets on send button clicked.', async () => {
-    // Arrange
-    render(<Chat />);
-
-    // Act
-    const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input') as HTMLTextAreaElement;
-    await act(async () => {
-      await userEvent.type(chatTextFieldInput, 'Hi AI!');
-    });
-    const chatSendButton: HTMLButtonElement = screen.getByTestId('chat-sendbutton');
-    await act(async () => {
-      await userEvent.click(chatSendButton);
-    });
-    const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
-
-    // Assert
-    await waitFor(() => {
-      expect(chatTextFieldInput.value).toBe('');
-      expect(messageCards.length).toBe(2);
-    });
-  });
-
-  test('Empty chat text field unchanged on <ENTER> pressed.', async () => {
-    // Arrange
-    render(<Chat />);
-
-    // Act
-    const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input') as HTMLTextAreaElement;
-    chatTextFieldInput.focus();
-    await act(async () => {
-      await userEvent.keyboard('{enter}');
+        // Assert
+        await waitFor(() => {
+            expect(chatTextFieldInput.value).toBe(keyTyped);
+        });
     });
 
-    // Assert
-    await waitFor(() => {
-      expect(chatTextFieldInput.value).toBe('');
-    });
-  });
+    test('Completed chat text field resets on <ENTER> pressed.', async () => {
+        // Arrange
+        render(<Chat/>);
 
-  test('Empty chat text field unchanged on send button clicked.', async () => {
-    // Arrange
-    render(<Chat />);
+        // Act
+        const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input') as HTMLTextAreaElement;
+        await act(async () => {
+            await userEvent.type(chatTextFieldInput, 'Hi AI!');
+        });
+        chatTextFieldInput.focus();
+        await act(async () => {
+            await userEvent.keyboard('{enter}');
+        });
+        const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
 
-    // Act
-    const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input');
-    const chatSendButton: HTMLButtonElement = screen.getByTestId('chat-sendbutton');
-    await act(async () => {
-      await userEvent.click(chatSendButton);
+        // Assert
+        await waitFor(() => {
+            expect(chatTextFieldInput.value).toBe('');
+            expect(messageCards.length).toBe(2);
+        });
     });
 
-    // Assert
-    await waitFor(() => {
-      expect(chatTextFieldInput.value).toBe('');
+    test('Completed chat text field resets on send button clicked.', async () => {
+        // Arrange
+        render(<Chat/>);
+
+        // Act
+        const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input') as HTMLTextAreaElement;
+        await act(async () => {
+            await userEvent.type(chatTextFieldInput, 'Hi AI!');
+        });
+        const chatSendButton: HTMLButtonElement = screen.getByTestId('chat-sendbutton');
+        await act(async () => {
+            await userEvent.click(chatSendButton);
+        });
+        const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
+
+        // Assert
+        await waitFor(() => {
+            expect(chatTextFieldInput.value).toBe('');
+            expect(messageCards.length).toBe(2);
+        });
     });
-  });
+
+    test('Empty chat text field unchanged on <ENTER> pressed.', async () => {
+        // Arrange
+        render(<Chat/>);
+
+        // Act
+        const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input') as HTMLTextAreaElement;
+        chatTextFieldInput.focus();
+        await act(async () => {
+            await userEvent.keyboard('{enter}');
+        });
+
+        // Assert
+        await waitFor(() => {
+            expect(chatTextFieldInput.value).toBe('');
+        });
+    });
+
+    test('Empty chat text field unchanged on send button clicked.', async () => {
+        // Arrange
+        render(<Chat/>);
+
+        // Act
+        const chatTextFieldInput: HTMLTextAreaElement = screen.getByTestId('chat-textfield-input');
+        const chatSendButton: HTMLButtonElement = screen.getByTestId('chat-sendbutton');
+        await act(async () => {
+            await userEvent.click(chatSendButton);
+        });
+
+        // Assert
+        await waitFor(() => {
+            expect(chatTextFieldInput.value).toBe('');
+        });
+    });
 });
