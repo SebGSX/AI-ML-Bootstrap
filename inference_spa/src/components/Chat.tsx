@@ -118,7 +118,7 @@ export default function Chat(): React.JSX.Element {
     return (
         <Box data-testid='chat-feed-box' sx={{pb: '3.5rem', pt: '1rem'}} height='100vh' display='flex'
              flexDirection='column' flex={1} overflow='auto'>
-            <Box data-testid='chat-messages-box' id='messages' flex={1} overflow='auto'>
+            <Box data-testid='chat-messages-box' id='messages' key='messages' flex={1} overflow='auto'>
                 {messages.map((message) => (
                     <Message key={message.id} id={message.id} sender={message.sender} message={message.message}
                              humanName={message.humanName}/>
