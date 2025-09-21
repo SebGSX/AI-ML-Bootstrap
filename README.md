@@ -142,7 +142,7 @@ unexpected but fortunate manner.
 
 Please see below for a screen capture of the chatbot AI built in this project:
 
-![image](https://user-images.githubusercontent.com/127726983/232884725-b9f1de29-bcee-479a-a72f-7ff33fb2a408.png)
+![image](/docs/ai-chatbot-screen-capture.png)
 
 ## Contributing
 
