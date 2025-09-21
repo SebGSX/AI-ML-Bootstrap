@@ -8,6 +8,11 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Index from 'InferenceSPA/pages/index';
 
+const uuidMock = jest.fn();
+jest.mock('uuid', () => ({
+    v4: () => uuidMock(),
+}));
+
 describe('Index Component Tests', () => {
     test('Index loads the chat feed.', () => {
         // Arrange
