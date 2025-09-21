@@ -18,6 +18,6 @@
       "InferenceSPA/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "vitest.config.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
