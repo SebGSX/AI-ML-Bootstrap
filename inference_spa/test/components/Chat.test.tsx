@@ -11,10 +11,15 @@ import Chat from 'InferenceSPA/components/Chat';
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 
+const uuidMock = jest.fn();
+jest.mock('uuid', () => ({
+    v4: () => uuidMock(),
+}));
+
 const server = setupServer(
     // Create a mock API handler using the `http` object from `msw`.
     http.post('https://localhost:44393/inference', () => {
-        return HttpResponse.json({text: 'Hi Human!'}, {status: 200});
+        return HttpResponse.json({text: 'Hi Human!'});
     }),
 );
 

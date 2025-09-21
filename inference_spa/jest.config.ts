@@ -13,7 +13,7 @@ const createJestConfig = nextJest({
 });
 
 const config: Config = {
-    testEnvironment: 'jsdom',
+    testEnvironment: 'jest-fixed-jsdom',
 };
 
 export default createJestConfig(config);
