@@ -3,6 +3,7 @@
  * Published under the MIT License.
  */
 
+import React from 'react';
 import { AppProps } from 'next/app';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
