@@ -36,6 +36,7 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: "Restore Dependencies"
+      working-directory: inference_api/
       run: dotnet restore
 
     - name: "Cache SonarQube Cloud Packages"
