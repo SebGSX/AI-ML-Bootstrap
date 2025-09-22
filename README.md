@@ -4,9 +4,16 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![issues - AI-ML-Bootstrap](https://img.shields.io/github/issues/SebGSX/AI-ML-Bootstrap)](https://github.com/SebGSX/AI-ML-Bootstrap/issues)
 
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
-
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=SebGSX_AI-ML-Bootstrap)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=bugs)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=SebGSX_AI-ML-Bootstrap&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=SebGSX_AI-ML-Bootstrap)
 
 ## Overview
 
