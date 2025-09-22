@@ -496,11 +496,11 @@ TensorFlow is a cross-platform and open-source ML platform. TensorFlow provides 
 and deployment, and MLOps. TensorFlow installs with GPU support by default. TensorFlow is installed by following the 
 instructions provided on its project site: https://www.tensorflow.org/.
 
-##### 5.7.6.4. Hugging Face
+##### 5.7.6.4. Hugging Face Transformers
 
-The Hugging Face transformers are a cross-platform and open-source set of APIs and tools that enable the download 
+The Hugging Face Transformers are a cross-platform and open-source set of APIs and tools that enable the download 
 and training of pretrained ML models. Using pretrained models reduces compute costs and saves on both time and 
-energy as well as other resources. The Hugging Face transformers are installed by following the instructions 
+energy as well as other resources. The Hugging Face Transformers are installed by following the instructions 
 provided on its project site: https://huggingface.co/docs/transformers/.
 
 ##### 5.7.6.5. gRPC
@@ -567,21 +567,21 @@ hardware unless your company is a dedicated AI/ML shop.
 
 ## 6. Sources of Datasets and Pretrained Models
 
-Whether training from scratch, training the pretrained, or fine-tuning ML models, we need data. Thankfully, there is 
-an abundance of data available to us from several sources.
+Whether training or fine-tuning models, we need data. Thankfully, there is an abundance of data available to us from 
+several sources.
 
 ### 6.1. Hugging Face
 
 Hugging Face develops tools for building applications that use AI and ML. The company provides the Hugging Face 
-Transformers library referenced in section 5.7.3.5 within this guide. Hugging Face also provides a platform that 
-allows people to share datasets and models for ML. Hugging Face can be accessed at its site: https://huggingface.co/.
+Transformers library referenced in above. Hugging Face also provides a platform that allows people to share datasets 
+and models. Hugging Face can be accessed at its site: https://huggingface.co/.
 
 Hugging Face’s publicly available datasets can be found here: https://huggingface.co/datasets.
 
 ### 6.2. Kaggle
 
-Kaggle is a Google company that provides an online community data science, AI, and ML practitioners. Kaggle provides 
-an online space for community members to share code, datasets, and models. Courses are also provided to help people 
+Kaggle is a Google company that provides an online community for data science, AI, and ML practitioners. Kaggle 
+provides a space for community members to share code, datasets, and models. Courses are also provided to help people 
 learn. Kaggle can be accessed at its site: https://www.kaggle.com/.
 
 - Kaggle’s publicly available code can be found here: https://www.kaggle.com/code.
@@ -590,21 +590,23 @@ learn. Kaggle can be accessed at its site: https://www.kaggle.com/.
 
 ### 6.3. OpenML
 
-OpenML is a worldwide ML lab that makes machine learning research easily accessible and reusable. OpenML is an open 
-platform for sharing datasets, algorithms, and experiments so that we can learn how to learn, together. OpenML can 
-be accessed at its site: https://www.openml.org/.
+OpenML is a worldwide lab that makes machine learning research easily accessible and reusable. OpenML is an open 
+platform for sharing datasets, algorithms, and experiments so that we can all learn together. OpenML can be accessed 
+at its site: https://www.openml.org/.
 
 ### 6.4. Next Steps
 
 If you haven’t already done so, take a look at the various sources and register where you feel comfortable so that 
-you can gain access to resources. Please take some time to look around, see what’s available, and familiarise 
-yourself with the various communities. Please remember to be courteous and respectful when dealing with others. Many 
-experts give freely of their time to help others, which help those experts are under no obligation to provide.
+you can gain access. Please take some time to look around, see what’s available, and familiarise yourself with the 
+various communities. Please also remember to be courteous and respectful when dealing with others. Many experts give 
+freely of their time to help, which help those experts are under no obligation to provide.
 
-With your developer workstation as well as access to datasets, code, courses, and models set up, you’re ready to 
+With your developer workstation as well as access to datasets, code, courses, and models all set up, you’re ready to 
 start building an AI/ML app. To get you started, I’ve provided code on GitHub: 
 https://github.com/SebGSX/AI-ML-Bootstrap, the code is in the same repo as this guide. Don’t forget to review the 
-literature section in this guide for detailed information. Good luck with your journey!
+foundational literature section in this guide for further information.
+
+Good luck with your journey!
 
 ## 7. Foundational Literature
 
