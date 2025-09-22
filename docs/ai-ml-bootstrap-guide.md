@@ -105,9 +105,9 @@ waste caused by over-spec.
 
 Please note that a developer workstation is no match for a cloud-based production system. Such production systems 
 typically comprise multiple nodes underpinning clusters. Each such node typically comprises high-performance storage 
-and vast amounts of RAM with multiple CPUs and GPUs where all the hardware is datacentre quality. With libraries like 
-JAX providing for distributed processing across multi-GPU and multi-node systems, it’s best to leave the heavy lifting 
-to the cloud services or a purpose-built datacentre.
+and vast amounts of RAM with multiple CPUs and GPUs where all the hardware is datacentre quality. With some 
+libraries providing for distributed processing across multi-GPU and multi-node systems, it’s best to leave the heavy 
+lifting to the cloud services or a purpose-built datacentre.
 
 #### 4.2.1. Central Processing Unit (CPU)
 
@@ -291,8 +291,8 @@ you’ll need to use MemTest86+.
 
 Before running any CPU test, please ensure that your cooling is correctly installed and configured. While not an 
 exhaustive list, be sure to check that fans are spinning at the correct speeds, thermal paste is applied correctly, 
-heatsinks are fitted correctly, water-pumps are pumping at the correct rate, cabling is neat, and air intakes and 
-outlets are unobstructed. Stress tests push your CPU utilisation to 100%, which consumes more power. That extra 
+heatsinks are fitted correctly, water-pumps are pumping at the correct rate, cabling is neat, and air intakes as 
+well as outlets are unobstructed. Stress tests push your CPU utilisation to 100%, which consumes more power. That extra 
 power consumption means extra heat, which can damage the CPU and motherboard if there is inadequate cooling.
 
 Irrespective of which OS you’re using, the Great Internet Mersenne Prime Search (GIMPS) project provides a useful 
@@ -321,8 +321,8 @@ optimisation steps may prove useful:
 - Ensure that cooling and overclocking settings are optimally configured. Utilities such as iCUE, GPU Tweak, and 
   similar are typically useful.
 
-Please note that there are other steps that can be taken and that you may have to rerun optimisation steps from 
-time-to-time.
+Please note that there are other steps that can be taken for optimisation purposes. Please also note that you may 
+have to rerun optimisation steps from time-to-time.
 
 ### 5.5. Utilities
 
@@ -338,21 +338,25 @@ Generally, the languages used in AI and ML include but are not limited to Python
 Java also make an appearance. Please note that Python is commonly used within AI and ML, and it is therefore 
 necessary. As such, please ensure that you have appropriate Python IDEs installed.
 
-- C/C++: Microsoft Visual Studio (including Community Edition) and JetBrains CLion are good options, as is VS Code 
+- **C/C++:** Microsoft Visual Studio (including Community Edition) and JetBrains CLion are good options, as is VS Code 
   with the C/C++ plugins installed.
-- Python: Microsoft Visual Studio (including Community Edition) and JetBrains PyCharm is a good option, as is VS 
+- **Python:** Microsoft Visual Studio (including Community Edition) and JetBrains PyCharm is a good option, as is VS 
   Code with the Python plugins installed. JetBrains DataSpell provides a Python IDE targeted at data scientists, 
   which may provide a better experience for certain workloads and approaches.
-- Java: JetBrains IntelliJ is a good option.
-- C#: Microsoft Visual Studio (including Community Edition) and JetBrains Rider are good options, as is VS Code with 
-  the C# plugins installed.
+- **Java:** JetBrains IntelliJ is a good option.
+- **C#:** Microsoft Visual Studio (including Community Edition) and JetBrains Rider are good options, as is VS Code 
+  with the C# plugins installed.
+
+> As of September 2025, AI first options like Cursor are popular.
 
 #### 5.6.1. AI Assistance
 
 If used carefully, GitHub Copilot is a worthwhile plugin that can accelerate development using AI. Mundane, 
 boilerplate code as well as code that follows established patterns are good use cases. GitHub Copilot also helps 
 with code annotation and documentation, which saves time (see: https://github.com/features/copilot). Please also 
-note that OpenAI’s ChatGPT+ can also help with coding, explanations, and guidance if used correctly.
+note that OpenAI’s ChatGPT can help with coding, explanations, and guidance if used correctly.
+
+> Other options include Claude, Gemini, and Grok, among others.
 
 #### 5.6.2. Windows Subsystem for Linux
 
@@ -368,7 +372,7 @@ instructions provided by Microsoft on its Learn site: https://learn.microsoft.co
 Before we do anything else, we need to install the latest version of Python because Python as mentioned previously 
 is ubiquitous. Python is downloaded from the Python project’s site: https://www.python.org/.
 
-##### 5.7.1.1. Conda (Package Management)
+##### 5.7.1.1. Conda or venv (Package Management)
 
 Conda is a cross-platform and open-source management system for environments and packages. Conda allows for multiple 
 isolated environments, each with their own packages and versions. Using Conda helps to reduce interference between 
@@ -378,6 +382,9 @@ Conda is installed by following the instructions provided on its project site: h
 As at the time of writing, there are two flavours of Conda: Anaconda and Miniconda. The former is a complete 
 distribution of roughly 1,500 scientific packages that have been curated and vetted for interoperability and 
 usability. Miniconda is a minimal distribution without the bundled packages.
+
+A good alternative to Conda is `venv`, which is included with Python. venv provides for the creation of isolated 
+virtual environments. As of September 2025, this project uses `venv` for environment management.
 
 #### 5.7.2. Bazel (Build System)
 
@@ -409,13 +416,13 @@ Docker Desktop is installed by following the instructions provided on its projec
 https://docs.docker.com/desktop/.
 
 > The use of Docker Desktop is vital for Windows users because the majority of industry AI/ML tools, models, 
-> frameworks, and libraries are available on Linux. To host the IDE on Windows but execute the code in Linux. For 
-> guidance, please see: https://docs.docker.com/desktop/windows/wsl/.
+> frameworks, and libraries are available on Linux. To host the IDE on Windows but execute the code in Linux, use WSL. 
+> For guidance, please see: https://docs.docker.com/desktop/windows/wsl/.
 
 ##### 5.7.4.1. Nvidia CUDA Drivers
 
-The Nvidia CUDA Drivers allow GPU passthrough to Docker containers running on Windows 11. The Nvidia CUDA Drivers 
-are installed by following the instructions provided on Nvidia’s developer site:
+The Nvidia CUDA Drivers allow GPU passthrough to Docker containers and WSL running on Windows 11. The Nvidia CUDA 
+Drivers are installed by following the instructions provided on Nvidia’s developer site:
 https://developer.nvidia.com/cuda/wsl.
 
 > It is worthwhile to consider joining the Nvidia Developer Program for access to preview drivers, learning 
@@ -428,7 +435,7 @@ For access to the latest Nvidia CUDA base images, please visit: https://hub.dock
 #### 5.7.5. Data Layer
 
 Designing a data layer for an AI and ML solution is a complex topic that is beyond the scope of this guide. Assuming 
-you’ve built a developer workstation that uses NVMe drives in a RAID-0 configuration, we have options. We could use 
+you’ve built a developer workstation that uses NVMe devices in a RAID-0 configuration, we have options. We could use 
 files stored in the OS filesystem or install specific storage software.
 
 The simplest solution would be to rely on the basic OS filesystem. More complex solutions include but are not 
@@ -436,83 +443,77 @@ limited to object storage services such as those provided by AWS, Azure, and Goo
 systems such as the Hadoop Distributed File System (HDFS). Databases like MLDB as well as distributed cache 
 technologies like Redis may also be used.
 
-Much of the datasets ingested during training and fine-tuning for ML models tends to be in the Apache Parquet format.
-That data is generally stored in files, which tend to be created and accessed using Petastorm. Further, the results 
-of training and fine-tuning of ML models also tend to be stored within files. Accordingly, we will use the simplest 
-solution for our Data Layer, the OS filesystem.
+Many of the datasets ingested for training and fine-tuning a model, tend to be in formats like CSV, JSON, TFRecord, 
+HDF5, and Parquet. Further, the results of training and fine-tuning models tend to be stored within files containing 
+weights and biases.
+
+For our purposes, we use the simplest solution for our Data Layer, the OS filesystem.
 
 > Please note that the specific requirements for any solution’s data needs will vary based on many factors. In terms 
 > of ML, the data layer requirements for training a new model vs fine-tuning an existing model vary greatly. The 
-> reason for the variance is that training a new model is considerably more data-intensive than fine-tuning. 
-> Similarly, running an AI that makes inferences from an existing model may have anything from quite modest data 
-> layer needs to enterprise-grade needs. Such needs could depend on whether the AI runs on a single user’s device or 
-> on servers intended to serve millions.
+> reason for the variance is that training a new model is considerably more data- and compute-intensive than 
+> fine-tuning. Similarly, running an AI that makes inferences from an existing model may have anything from quite 
+> modest data layer needs to enterprise-grade needs. Such needs could depend on whether the AI runs on a single 
+> user’s device or on servers intended to serve millions.
 
 ##### 5.7.5.1. Petastorm
 
 Petastorm is a cross-platform and open-source data access library. Petastorm provides for single machine as well as 
-distributed system training and evaluation of ML models directly from datasets within the Apache Parquet format. 
+distributed system training and evaluation of models directly from datasets within the Apache Parquet format. 
 Petastorm is installed by following the instructions provided on its project site: https://petastorm.readthedocs.io/.
 
 #### 5.7.6. AI/ML Layer
 
-The AI/ML Layer provides for model training, fine-tuning, and inference capabilities using both CPU and GPU 
-capabilities. Given current industry trends as at the time of writing, the most effective way to build the AI/ML 
-Layer so that the resulting service can be containerised for deployment within Kubernetes, is to use gRPC. gRPC 
-allows for native Python execution that is essential for running JAX, PyTorch, and TensorFlow functions that support 
-training, fine-tuning, and inference capabilities for models.
+The AI/ML Layer provides for model training, fine-tuning, and inference using both CPU and GPU capabilities. Given 
+current industry trends as at the time of writing, the most effective way to build the AI/ML Layer so that the 
+resulting service can be containerised for deployment within Kubernetes, is to use gRPC. gRPC allows for native 
+Python execution as well as low overhead transfers that are essential for running PyTorch and TensorFlow functions 
+to support training, fine-tuning, and inference.
 
 ##### 5.7.6.1. Nvidia CUDA Toolkit
 
 Nvidia’s Compute Unified Device Architecture (CUDA) is a parallel computing platform and application programming 
-interface (API). The CUDA Toolkit allows certain Nvidia GPUs to be used for general-purpose computing on GPUs (GPGPU)
-. The CUDA Toolkit is installed by following the instructions provided on Nvidia’s developer site:
+interface (API). The CUDA Toolkit allows certain Nvidia GPUs to be used for general-purpose computing on GPUs 
+(GPGPU). The CUDA Toolkit is installed by following the instructions provided on Nvidia’s developer site:
 https://developer.nvidia.com/cuda-toolkit.
 
 Once the CUDA Toolkit is installed, you may see a note indicating that certain integrated tools were not installed. 
-Please refer to the URL provided by the installer for further information. In essence, the tools have been moved 
+Please refer to the URL provided by the installer for further information. In essence, such tools have been moved 
 into a Visual Studio extension available within the Visual Studio Marketplace. At the time of writing, the tools 
 have been bundled together under the title “NVIDIA Nsight Integration” and the bundle is offered in both 32- and 
 64-bit. Please be sure to check that you’re downloading the correct extension by verifying that the author is listed 
 as Nvidia (www.nvidia.com) within the Visual Studio Marketplace: https://marketplace.visualstudio.com/.
 
-##### 5.7.6.2. JAX
+##### 5.7.6.2. PyTorch
 
-JAX is a cross-platform and open-source combination of Autograd and XLA for high-performance, numerical computing. 
-JAX provides a familiar API as well as transformations, and it runs on CPU, GPU, and TPU (cloud). Please make sure 
-to install JAX for GPU. JAX is installed by following the instructions provided on its project site:
-https://jax.readthedocs.io/.
-
-##### 5.7.6.3. PyTorch
-
-PyTorch is a cross-platform and open-source ML framework. PyTorch provides for distributed training and cloud 
+PyTorch is a cross-platform and open-source ML framework. PyTorch provides for distributed training with cloud 
 support. In addition, PyTorch has a robust ecosystem. Please make sure to install PyTorch for GPU. PyTorch is 
 installed by following the instructions provided on its project site: https://pytorch.org/.
 
-##### 5.7.6.4. TensorFlow
+##### 5.7.6.3. TensorFlow
 
 TensorFlow is a cross-platform and open-source ML platform. TensorFlow provides for data preparation, model training 
 and deployment, and MLOps. TensorFlow installs with GPU support by default. TensorFlow is installed by following the 
 instructions provided on its project site: https://www.tensorflow.org/.
 
-##### 5.7.6.5. Hugging Face Transformers
+##### 5.7.6.4. Hugging Face
 
-The Hugging Face Transformers are a cross-platform and open-source set of APIs and tools that enable the download 
+The Hugging Face transformers are a cross-platform and open-source set of APIs and tools that enable the download 
 and training of pretrained ML models. Using pretrained models reduces compute costs and saves on both time and 
-energy as well as other resources. The Hugging Face Transformers are installed by following the instructions 
+energy as well as other resources. The Hugging Face transformers are installed by following the instructions 
 provided on its project site: https://huggingface.co/docs/transformers/.
 
-##### 5.7.6.6. gRPC
+##### 5.7.6.5. gRPC
 
 gRPC is a cross-platform and open-source Remote Procedure Call (RPC) framework. gRPC efficiently connects services 
-in and across datacentres with pluggable support for load balancing, tracing, health checking and authentication. 
+in and across datacentres with pluggable support for load balancing, tracing, health checking, and authentication. 
 gRPC supports streaming as well as bidirectional communication. It is also applicable in the last mile of 
 distributed computing to connect devices, mobile applications, and browsers to backend services. gRPC is installed 
 by following the instructions provided on its project site: https://grpc.io/.
 
-Please note that gRPC supports multiple languages; however, we use the Python flavour of gRPC. We do so because we 
-use gRPC to create a service layer that runs JAX, PyTorch, and TensorFlow functions that support training, 
-fine-tuning, and inference capabilities for models.
+Please note that gRPC supports multiple languages; however, we will use the Python flavour of gRPC for this project. 
+This is done because gRPC is used to create a service layer that runs PyTorch and TensorFlow functions that support 
+training, fine-tuning, and inference.
 
 #### 5.7.7. Web API Layer
 
@@ -521,46 +522,48 @@ manageability, cost, and developer productivity, only two alternatives are recom
 C# developers and Micronaut for Java developers. Web APIs built using either option will integrate with the AI/ML 
 Layer using auto-generated stubs provided by gRPC. To facilitate Client Layer development, OpenAPI/Swagger for API 
 documentation and client auto-generation as well as JSON Web Token (JWT) for authentication and authorisation, are 
-required.
+recommended.
 
 #### 5.7.8. Client Layer
 
 The Client Layer can be implemented several ways; however, for reasons of performance, security, scalability, 
 manageability, cost, and developer productivity, only one approach per device type is recommended. For mobile 
-devices, React Native is recommended. For web-enabled devices like laptops and desktops, ReactJS (we'll use Next.js, a 
-ReactJS framework) is recommended. Please ensure that TypeScript is used because it attends to the challenges caused 
-by JavaScript at scale. Clients built using either React Native or ReactJS will integrate with the Web API Layer 
-using auto-generated stubs provided by the OpenAPI/Swagger toolchain. Authentication and authorisation will be 
-provided by bearer tokens using JWT.
+devices, Flutter with Dart is recommended. For web-enabled devices like laptops and desktops, React (we'll use Next.
+js, a React framework) is recommended. Please ensure that TypeScript is used because it attends to the challenges 
+caused by JavaScript at scale.
+
+Clients built using either Flutter or React will integrate with the Web API Layer using auto-generated stubs 
+provided by the OpenAPI/Swagger toolchain. Authentication and authorisation can be provided by bearer tokens using JWT.
 
 #### 5.7.9. Architecture
 
-Using node pools and taints in Kubernetes, the AI/ML Layer, Web API Layer, and Client Layer can all be served with a 
-single cluster. Using nodes with appropriate hardware for each workload allows for rapid communication between the 
-Web API Layer and the AI/ML Layer via the internal Kubernetes network. Similarly, the Data Layer can be served by a 
-high-performance shared volume within Kubernetes. Doing so allows all AI/ML Layer containers within a pod access the 
-pretrained model, load it into memory, and provide inference.
+Using node pools and taints in Kubernetes, each layer--AI/ML, Web API, and Client--can be served with a single 
+cluster. Using nodes with appropriate hardware for each workload allows for rapid communication between the Web API 
+and AI/ML Layers via the internal Kubernetes network. Similarly, the Data Layer can be served by a high-performance 
+shared volume within Kubernetes. Doing so allows all AI/ML Layer containers within a pod to access the pretrained model,
+load it into memory, and provide inference.
 
 Similarly, if training and fine-tuning are correctly coordinated and the data is stored using the Apache Parquet 
 format, the shared volume is an effective solution. Supporting data such as user profiles, state management, etc. 
-can easily be provided by a managed database service external to the cluster as needed.
+can easily be provided by a managed database service external to the cluster.
 
 Overall, the architecture used within this project should reflect a reasonably cost-efficient, performant, flexible, 
-and scalable service that the author hopes is meaningfully instructive.
+and scalable service that the author hopes is meaningfully instructive as a foundational pattern.
 
 > Please note that the architecture considered can be extended to support high availability up to and including 99.
 > 999%. By using shared volume and supporting data replication within a global deployment of geo-redundant clusters 
-> and supporting services, such high availability can be achieved.
+> and supporting services, high-availability can be achieved.
 
 ### 5.8. Next Steps
 
 At this point you should have a fully built, fully installed, and fully configured developer workstation for AI and 
 ML. Nice work! Our next steps will be to familiarise ourselves with the sources of datasets and pretrained models so 
-that we can start with a functioning AI, learn about fine-tuning, and then get into training from scratch. Please do 
-bear in mind that training from scratch is expensive to do correctly. While a self-built developer workstation can 
-run modest experiments for training, any sophisticated training is likely best done in the cloud. Training in the 
-cloud allows you to pay for what you use. While still expensive, it’s orders of magnitude more affordable than 
-buying the hardware.
+that we can build a functioning AI, learn about fine-tuning, and then get into training.
+
+Please do bear in mind that training is expensive to do correctly. While a self-built developer workstation can run 
+modest experiments for training, any sophisticated training is likely best done in the cloud. Training in the cloud 
+allows you to pay for what you use. While still expensive, it’s orders of magnitude more affordable than buying the 
+hardware unless your company is a dedicated AI/ML shop.
 
 ## 6. Sources of Datasets and Pretrained Models
 
