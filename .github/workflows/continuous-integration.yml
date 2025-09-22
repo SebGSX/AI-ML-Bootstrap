@@ -62,9 +62,11 @@ jobs:
         dotnet tool update dotnet-sonarscanner --tool-path ${{ runner.temp }}\scanner
 
     - name: "Build"
+      working-directory: inference_api/
       run: dotnet build --no-restore
 
     - name: "Analyze .NET with SonarQube Cloud"
+      working-directory: inference_api/
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       shell: powershell
