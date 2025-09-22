@@ -144,7 +144,7 @@ export default function Chat(): React.JSX.Element {
                            input: {
                                endAdornment: (
                                    <InputAdornment position='end'>
-                                       <IconButton data-testid='chat-sendbutton' onClick={clickHandler}>
+                                       <IconButton data-testid='chat-iconbutton' onClick={clickHandler}>
                                            <SendIcon/>
                                        </IconButton>
                                    </InputAdornment>

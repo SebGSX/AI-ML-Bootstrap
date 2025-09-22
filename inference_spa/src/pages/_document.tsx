@@ -3,15 +3,14 @@
  * Published under the MIT License.
  */
 
-import { DocumentProps, Head, Html, Main, NextScript } from 'next/document';
 import React from "react";
+import { Head, Html, Main, NextScript } from 'next/document';
 
 /**
  * Renders the document component that wraps the app and its pages.
- * @param props A DocumentProps representing the props for the document.
- * @returns A JSX.Element representing the rendered component.
+  * @returns A JSX.Element representing the rendered component.
  */
-export default function Document(props: DocumentProps): React.JSX.Element {
+export default function Document(): React.JSX.Element {
     return (
         <Html lang='en'>
             <Head>

@@ -11,7 +11,7 @@ import { render, screen } from '@testing-library/react';
 import InferenceSpaApp from 'InferenceSPA/pages/_app';
 
 /**
- * Tests that the _app page renders correctly.
+ * Tests that the InferenceSpaApp renders correctly.
  */
 test('_app page renders correctly', () => {
     // Arrange
