@@ -88,4 +88,54 @@ describe('Chat component...', () => {
         // Assert
         expect(textField.value).toBe(inputText);
     });
+
+    /**
+     * Tests that the Chat component sends a message and receives a response when text is typed and the ENTER key is
+     * pressed.
+     */
+    test('sends message and response when text field not empty and ENTER pressed.', async () => {
+        // Arrange
+        const inputText: string = 'Hello, AI!';
+
+        // Act
+        render(<Chat/>);
+        const textField = screen.getByTestId('chat-textfield-input') as HTMLInputElement;
+        await userEvent.type(textField, inputText);
+
+        textField.focus();
+        await userEvent.keyboard('{enter}');
+
+        const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
+
+        // Assert
+        await waitFor(() => {
+            expect(textField.value).toBe('');
+            expect(messageCards.length).toBe(2);
+        });
+    });
+
+    /**
+     * Tests that the Chat component sends a message and receives a response when text is typed and the icon button is
+     * clicked.
+     */
+    test('sends message and response when text field not empty and icon button clicked.', async () => {
+        // Arrange
+        const inputText: string = 'Hello, AI!';
+
+        // Act
+        render(<Chat/>);
+        const textField = screen.getByTestId('chat-textfield-input') as HTMLInputElement;
+        await userEvent.type(textField, inputText);
+
+        const iconButton: HTMLButtonElement = screen.getByTestId('chat-iconbutton');
+        await userEvent.click(iconButton)
+
+        const messageCards: HTMLElement[] = screen.queryAllByTestId('message-card');
+
+        // Assert
+        await waitFor(() => {
+            expect(textField.value).toBe('');
+            expect(messageCards.length).toBe(2);
+        });
+    });
 });
