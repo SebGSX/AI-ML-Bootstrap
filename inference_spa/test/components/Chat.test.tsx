@@ -5,16 +5,16 @@
 
 import React from 'react';
 import '@testing-library/jest-dom';
-import { expect, test } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import {expect, test} from 'vitest';
+import {render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { http, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node';
+import {http, HttpResponse} from 'msw';
+import {setupServer} from 'msw/node';
 import Chat from 'InferenceSPA/components/Chat';
 
 const server = setupServer(
     http.post('https://localhost:44393/inference', () => {
-        return HttpResponse.json({ text: 'Hi Human!' });
+        return HttpResponse.json({text: 'Hi Human!'});
     })
 );
 

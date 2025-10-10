@@ -4,10 +4,10 @@
  */
 
 import React from 'react';
-import { AppProps } from 'next/app';
+import {AppProps} from 'next/app';
 import '@testing-library/jest-dom';
-import { expect, test, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import {expect, test, vi} from 'vitest';
+import {render, screen} from '@testing-library/react';
 import InferenceSpaApp from 'InferenceSPA/pages/_app';
 
 /**

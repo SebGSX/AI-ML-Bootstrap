@@ -3,14 +3,7 @@
  * Published under the MIT License.
  */
 
-import {
-  AppBar,
-  Box,
-  Container,
-  IconButton,
-  Link,
-  Toolbar,
-  Typography } from '@mui/material';
+import {AppBar, Box, Container, IconButton, Link, Toolbar, Typography} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 
@@ -20,7 +13,7 @@ import React from 'react';
  * @param props The props for the component.
  * @returns A JSX.Element representing the layout component.
  */
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>): React.JSX.Element {
+export default function Layout({children}: Readonly<{ children: React.ReactNode }>): React.JSX.Element {
     return (
         <>
             <Container data-testid='layout-container' maxWidth='lg'>

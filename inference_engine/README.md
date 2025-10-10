@@ -16,25 +16,27 @@ The code is designed to run on an NVIDIA GPU.
 The code is designed to run on Linux. The code is written with PyCharm on Windows, but is run using WSL 2.0 within
 Windows using a clean Linux Ubuntu 24.04 LTS distribution.
 
-> Remember to ensure that the NVIDIA CUDA Toolkit and drivers are installed on Windows for use by WSL. The NVIDIA 
+> Remember to ensure that the NVIDIA CUDA Toolkit and drivers are installed on Windows for use by WSL. The NVIDIA
 > CUDA Toolkit will also need to be installed on the Linux distribution. As always, ensure that all operating systems
 > are up-to-date before you begin.
 
 ### Software
 
 To simplify the process, the following steps are recommended in exact order:
+
 1. Install the NVIDIA CUDA Toolkit, version 12.4. You may run into an error, see the guidance within
-   [this article](https://askubuntu.com/questions/1491254/installing-cuda-on-ubuntu-23-10-libt5info-not-installable) 
+   [this article](https://askubuntu.com/questions/1491254/installing-cuda-on-ubuntu-23-10-libt5info-not-installable)
    to resolve the issue.
 2. Install cuDNN for CUDA 12.
 3. Install cuTENSOR for CUDA 12.
 4. Install cuSPARSELt for CUDA 12.
 5. Ensure that Python 3.12, pip, and the `venv` module are installed.
 6. Install `venv` and create the `inference_engine` virtual environment.
-7. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`, `grpcio-tools`,
+7. Install `pytorch` for CUDA 12.4, `tensorflow`, `bitsandbytes`, `accelerate`, `transformers`, `grpcio`,
+   `grpcio-tools`,
    `huggingface_hub`, `coverage`, `pytest`, and `pytest-mock`.
 
-In Ubuntu 24.04, Python 3.12 is installed by default. The following commands are used to install the remaining 
+In Ubuntu 24.04, Python 3.12 is installed by default. The following commands are used to install the remaining
 Python components:
 
 ```shell
@@ -99,7 +101,7 @@ pip freeze > requirements.txt
 
 ### gRPC
 
-From time-to-time, the gRPC code will need to be regenerated. The code is generated using the `protoc` tool. The 
+From time-to-time, the gRPC code will need to be regenerated. The code is generated using the `protoc` tool. The
 following command will generate the code:
 
 ```shell

@@ -4,16 +4,16 @@
  */
 
 import React from 'react';
-import { AppProps } from 'next/app';
+import {AppProps} from 'next/app';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import Layout from 'InferenceSPA/components/Layout';
 
 // The theme for the app.
 const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  }
+    palette: {
+        mode: 'dark',
+    }
 });
 
 /**
@@ -21,7 +21,7 @@ const darkTheme = createTheme({
  * @param props An AppProps representing the props for the app.
  * @returns A JSX.Element representing the rendered component.
  */
-export default function InferenceSpaApp({ Component, pageProps }: AppProps) {
+export default function InferenceSpaApp({Component, pageProps}: AppProps) {
     return (
         <ThemeProvider theme={darkTheme}>
             <CssBaseline/>

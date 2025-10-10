@@ -4,11 +4,11 @@
  */
 
 import React from 'react';
-import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
+import {Box, IconButton, InputAdornment, TextField} from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import { IMessageProps, Message } from 'InferenceSPA/components/Message';
-import { Configuration, InferenceApi, Request } from 'InferenceSPA/api';
-import { v4 as uuidV4 } from 'uuid';
+import {IMessageProps, Message} from 'InferenceSPA/components/Message';
+import {Configuration, InferenceApi, Request} from 'InferenceSPA/api';
+import {v4 as uuidV4} from 'uuid';
 
 /**
  * Creates the chat component. The chat component is a box that contains a list of messages exchanged, and a text field

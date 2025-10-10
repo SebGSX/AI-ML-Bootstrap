@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import {Card, CardContent, Typography} from '@mui/material';
 
 /**
  * An interface representing the Message component props.
@@ -33,7 +33,7 @@ export interface IMessageProps {
  * @param props An IMessageProps representing the props for the component.
  * @returns A JSX element representing the component.
  */
-export function Message({ sender, message, humanName }: Readonly<IMessageProps>) {
+export function Message({sender, message, humanName}: Readonly<IMessageProps>) {
     const variant = sender === humanName ? 'outlined' : 'elevation';
     return (
         <Card data-testid='message-card' sx={{mb: '0.5rem'}} variant={variant}>

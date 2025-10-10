@@ -4,11 +4,11 @@
  */
 
 import React from "react";
-import { Head, Html, Main, NextScript } from 'next/document';
+import {Head, Html, Main, NextScript} from 'next/document';
 
 /**
  * Renders the document component that wraps the app and its pages.
-  * @returns A JSX.Element representing the rendered component.
+ * @returns A JSX.Element representing the rendered component.
  */
 export default function Document(): React.JSX.Element {
     return (

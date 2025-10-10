@@ -5,8 +5,8 @@
 
 import React from 'react';
 import '@testing-library/jest-dom';
-import { expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import {expect, test} from 'vitest';
+import {render, screen} from '@testing-library/react';
 import Index from 'InferenceSPA/pages/index';
 
 /**
@@ -14,7 +14,7 @@ import Index from 'InferenceSPA/pages/index';
  */
 test('Index page renders correctly', () => {
     // Act
-    render(<Index />);
+    render(<Index/>);
 
     // Assert
     expect(screen.getByTestId('chat-feed-box')).toBeInTheDocument();

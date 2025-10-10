@@ -14,23 +14,23 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>bin\Debug\InferenceApi.xml</DocumentationFile>
+        <DocumentationFile>bin\Debug\InferenceApi.xml</DocumentationFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>bin\Release\InferenceApi.xml</DocumentationFile>
+        <DocumentationFile>bin\Release\InferenceApi.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
-        <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.71.0"/>
+        <PackageReference Include="Grpc.Net.Client" Version="2.71.0"/>
         <PackageReference Include="Grpc.Tools" Version="2.72.0">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
-        <Protobuf Include="inference_engine.proto" GrpcServices="Client" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4"/>
+        <Protobuf Include="inference_engine.proto" GrpcServices="Client"/>
     </ItemGroup>
 
 </Project>

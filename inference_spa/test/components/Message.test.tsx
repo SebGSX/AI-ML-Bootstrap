@@ -5,9 +5,9 @@
 
 import React from 'react';
 import '@testing-library/jest-dom';
-import { expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { Message } from 'InferenceSPA/components/Message';
+import {expect, test} from 'vitest';
+import {render, screen} from '@testing-library/react';
+import {Message} from 'InferenceSPA/components/Message';
 
 /**
  * Tests that the Message component renders correctly.
@@ -20,7 +20,7 @@ test('Message component renders correctly', () => {
     const sender = 'sender';
 
     // Act
-    render(<Message sender={sender} message={messageText} humanName={humanName} id={id} />);
+    render(<Message sender={sender} message={messageText} humanName={humanName} id={id}/>);
 
     // Assert
     expect(screen.getByTestId('message-card')).toBeInTheDocument();
@@ -38,7 +38,7 @@ test('Message variant is outlined when sender is human', () => {
     const messageText = 'message';
 
     // Act
-    render(<Message sender={humanName} message={messageText} humanName={humanName} id={id} />);
+    render(<Message sender={humanName} message={messageText} humanName={humanName} id={id}/>);
 
     // Assert
     expect(screen.getByTestId('message-card')).toBeInTheDocument();
@@ -57,7 +57,7 @@ test('Message variant is outlined when sender is not human', () => {
     const sender = 'sender';
 
     // Act
-    render(<Message sender={sender} message={messageText} humanName={humanName} id={id} />);
+    render(<Message sender={sender} message={messageText} humanName={humanName} id={id}/>);
 
     // Assert
     expect(screen.getByTestId('message-card')).toBeInTheDocument();
