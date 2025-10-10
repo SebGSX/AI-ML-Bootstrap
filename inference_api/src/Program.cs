@@ -19,31 +19,28 @@ builder.Services.AddOptions<GrpcClientOptions>().Configure(config =>
 
 builder.Services.AddSingleton<IGrpcClientFactory, GrpcClientFactory>();
 
-builder.Services.Configure<ApiBehaviorOptions>(options =>
-{
-    options.SuppressModelStateInvalidFilter = true;
-});
+builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc(builder.Configuration["Swagger:Configuration:Version"], new OpenApiInfo()
+    options.SwaggerDoc(builder.Configuration["Swagger:Configuration:Version"], new OpenApiInfo
     {
         Description = builder.Configuration["Swagger:Configuration:Description"],
         Title = builder.Configuration["Swagger:Configuration:Title"],
         Version = builder.Configuration["Swagger:Configuration:Version"],
-        Contact = new OpenApiContact()
+        Contact = new OpenApiContact
         {
             Name = builder.Configuration["Swagger:Configuration:Contact:Name"],
             Url = new Uri(builder.Configuration["Swagger:Configuration:Contact:Url"]!)
         }
     });
-    
+
     options.IncludeXmlComments(
         Path.Combine(AppContext.BaseDirectory,
-        $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
+            $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
 });
 
 builder.Services.AddCors();

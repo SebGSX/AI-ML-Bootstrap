@@ -6,13 +6,13 @@
 namespace InferenceApi.UnitTests;
 
 /// <summary>
-/// Tests <see cref="GrpcClientFactory"/>.
+///     Tests <see cref="GrpcClientFactory" />.
 /// </summary>
 public class GrpcClientFactoryTests
 {
     /// <summary>
-    /// Tests that <see cref="GrpcClientFactory.CreateInferenceEngineClientAsync"/> returns a new
-    /// <see cref="InferenceService.InferenceServiceClient"/>.
+    ///     Tests that <see cref="GrpcClientFactory.CreateInferenceEngineClientAsync" /> returns a new
+    ///     <see cref="InferenceService.InferenceServiceClient" />.
     /// </summary>
     [Fact]
     public async Task CreateInferenceEngineClientAsync_ReturnsInferenceServiceClient()

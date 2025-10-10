@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 namespace InferenceApi.UnitTests;
 
 /// <summary>
-/// Tests <see cref="InferenceController"/>.
+///     Tests <see cref="InferenceController" />.
 /// </summary>
 public class InferenceControllerTests
 {
@@ -20,7 +20,7 @@ public class InferenceControllerTests
     private readonly InferenceController _inferenceController;
 
     /// <summary>
-    /// Initialises a new instance of the <see cref="InferenceControllerTests"/> class.
+    ///     Initialises a new instance of the <see cref="InferenceControllerTests" /> class.
     /// </summary>
     public InferenceControllerTests()
     {
@@ -31,7 +31,7 @@ public class InferenceControllerTests
     }
 
     /// <summary>
-    /// Tests that <see cref="InferenceController.PostGetResponse"/> with an empty request returns a bad response.
+    ///     Tests that <see cref="InferenceController.PostGetResponse" /> with an empty request returns a bad response.
     /// </summary>
     [Fact]
     public async Task PostGetResponse_WithEmptyRequest_ReturnsBadRequest()
@@ -50,8 +50,8 @@ public class InferenceControllerTests
     }
 
     /// <summary>
-    /// Tests that <see cref="InferenceController.PostGetResponse"/> with a whitespace request returns a bad request
-    /// response.
+    ///     Tests that <see cref="InferenceController.PostGetResponse" /> with a whitespace request returns a bad request
+    ///     response.
     /// </summary>
     [Fact]
     public async Task PostGetResponse_WithWhitespaceRequest_ReturnsBadRequest()
@@ -70,7 +70,7 @@ public class InferenceControllerTests
     }
 
     /// <summary>
-    /// Tests that <see cref="InferenceController.PostGetResponse"/> with a valid request returns an OK response.
+    ///     Tests that <see cref="InferenceController.PostGetResponse" /> with a valid request returns an OK response.
     /// </summary>
     [Fact]
     public async Task PostGetResponse_WithValidRequest_ReturnsOk()
@@ -96,20 +96,20 @@ public class InferenceControllerTests
         _grpcClientFactoryMock
             .Setup(m => m.CreateInferenceEngineClientAsync())
             .ReturnsAsync(() => inferenceServiceClientMock.Object);
-        
+
         // Act
         var result = await _inferenceController.PostGetResponse(request);
-        
+
         // Assert
         var okObjectResult = Assert.IsType<OkObjectResult>(result.Result);
         var response = Assert.IsType<Response>(okObjectResult.Value);
         Assert.Equal(responseExpected.Text, response.Text);
         Assert.Equal((int)HttpStatusCode.OK, okObjectResult.StatusCode);
     }
-    
+
     /// <summary>
-    /// Tests that <see cref="InferenceController.PostGetResponse"/> that has an exception returns an internal server
-    /// error response.
+    ///     Tests that <see cref="InferenceController.PostGetResponse" /> that has an exception returns an internal server
+    ///     error response.
     /// </summary>
     [Fact]
     public async Task PostGetResponse_WithExceptionThrown_ReturnsInternalServerError()
@@ -132,8 +132,8 @@ public class InferenceControllerTests
     }
 
     /// <summary>
-    /// Tests that <see cref="InferenceController.PostGetResponse"/> that has a gRPC error returns an internal server
-    /// error response.
+    ///     Tests that <see cref="InferenceController.PostGetResponse" /> that has a gRPC error returns an internal server
+    ///     error response.
     /// </summary>
     [Fact]
     public async Task PostGetResponse_WithErrorResponse_ReturnsInternalServerError()

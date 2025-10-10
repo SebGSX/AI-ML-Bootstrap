@@ -13,16 +13,16 @@ namespace InferenceApi.Factories;
 public class GrpcClientFactory : IGrpcClientFactory
 {
     private readonly IOptions<GrpcClientOptions> _options;
-    
+
     /// <summary>
-    /// Initialises a new instance of the <see cref="GrpcClientFactory"/> class.
+    ///     Initialises a new instance of the <see cref="GrpcClientFactory" /> class.
     /// </summary>
     /// <param name="options"></param>
     public GrpcClientFactory(IOptions<GrpcClientOptions> options)
     {
         _options = options;
     }
-    
+
     /// <inheritdoc />
     public async Task<InferenceService.InferenceServiceClient> CreateInferenceEngineClientAsync()
     {
