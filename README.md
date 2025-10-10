@@ -1,5 +1,6 @@
 # AI/ML Bootstrap
 
+[![AI/ML Bootstrap (CI)](https://github.com/SebGSX/AI-ML-Bootstrap/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/SebGSX/AI-ML-Bootstrap/actions/workflows/continuous-integration.yml)
 [![GitHub tag](https://img.shields.io/github/tag/SebGSX/AI-ML-Bootstrap?include_prereleases=&sort=semver&color=blue)](https://github.com/SebGSX/AI-ML-Bootstrap/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![issues - AI-ML-Bootstrap](https://img.shields.io/github/issues/SebGSX/AI-ML-Bootstrap)](https://github.com/SebGSX/AI-ML-Bootstrap/issues)
