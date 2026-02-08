@@ -47,7 +47,7 @@ optree==0.17.0
 packaging==25.0
 pillow==11.0.0
 pluggy==1.6.0
-protobuf==6.32.1
+protobuf==6.33.5
 psutil==7.1.0
 Pygments==2.19.2
 pytest==8.4.2
